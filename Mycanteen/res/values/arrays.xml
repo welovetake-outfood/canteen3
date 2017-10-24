@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="canteenname">
+        <item>学苑</item>
+        <item>学士</item>
+        <item>黑店</item>
+        <item>清真餐厅</item>
+        <item>饺子园</item>
+    </string-array>
+    
+</resources>
