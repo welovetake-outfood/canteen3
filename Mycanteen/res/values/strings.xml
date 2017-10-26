@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_workerlogin">Workerlogin</string>
     <string name="title_activity_studentchoose">Studentchoose</string>
+    <string name="title_activity_canteenpage_fragment">CanteenpageFragment</string>
+    <string name="title_activity_canteenlist_fragment">CanteenlistFragment</string>
 
 </resources>

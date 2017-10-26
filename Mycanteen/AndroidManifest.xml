@@ -30,6 +30,14 @@
             android:name=".Studentchoose"
             android:label="@string/title_activity_studentchoose" >
         </activity>
+        <activity
+            android:name=".CanteenpageFragment"
+            android:label="@string/title_activity_canteenpage_fragment" >
+        </activity>
+        <activity
+            android:name=".CanteenlistFragment"
+            android:label="@string/title_activity_canteenlist_fragment" >
+        </activity>
     </application>
 
 </manifest>
