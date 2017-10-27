@@ -8,5 +8,6 @@
     <string name="title_activity_studentchoose">Studentchoose</string>
     <string name="title_activity_canteenpage_fragment">CanteenpageFragment</string>
     <string name="title_activity_canteenlist_fragment">CanteenlistFragment</string>
+    <string name="title_activity_bookcanteen">Bookcanteen</string>
 
 </resources>

@@ -31,32 +31,35 @@ public final class R {
         public static final int action_settings=0x7f090007;
         public static final int button1=0x7f090001;
         public static final int button2=0x7f090002;
+        public static final int buttonbook=0x7f090006;
         public static final int canteen_list=0x7f090003;
-        public static final int canteendesc=0x7f090006;
         public static final int canteenname=0x7f090005;
         public static final int canteenpage_container=0x7f090004;
         public static final int textView1=0x7f090000;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_studentchoose=0x7f030001;
-        public static final int activity_workerlogin=0x7f030002;
-        public static final int fragment_canteenpage=0x7f030003;
-        public static final int simple_list_item=0x7f030004;
-        public static final int studentfile=0x7f030005;
-        public static final int workerlogin=0x7f030006;
+        public static final int activity_bookcanteen=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_studentchoose=0x7f030002;
+        public static final int activity_workerlogin=0x7f030003;
+        public static final int fragment_canteenpage=0x7f030004;
+        public static final int simple_list_item=0x7f030005;
+        public static final int studentfile=0x7f030006;
+        public static final int workerlogin=0x7f030007;
     }
     public static final class menu {
-        public static final int canteenlist=0x7f080000;
-        public static final int canteenpage=0x7f080001;
-        public static final int main=0x7f080002;
-        public static final int studentchoose=0x7f080003;
-        public static final int workerlogin=0x7f080004;
+        public static final int bookcanteen=0x7f080000;
+        public static final int canteenlist=0x7f080001;
+        public static final int canteenpage=0x7f080002;
+        public static final int main=0x7f080003;
+        public static final int studentchoose=0x7f080004;
+        public static final int workerlogin=0x7f080005;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060001;
+        public static final int title_activity_bookcanteen=0x7f060007;
         public static final int title_activity_canteenlist_fragment=0x7f060006;
         public static final int title_activity_canteenpage_fragment=0x7f060005;
         public static final int title_activity_studentchoose=0x7f060004;
