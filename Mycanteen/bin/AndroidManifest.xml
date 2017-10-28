@@ -42,6 +42,26 @@
             android:name=".Bookcanteen"
             android:label="@string/title_activity_bookcanteen" >
         </activity>
+        <activity
+            android:name=".Leavemessage"
+            android:label="@string/title_activity_leavemessage" >
+        </activity>
+        <activity
+            android:name=".Birthdaybook"
+            android:label="@string/title_activity_birthdaybook" >
+        </activity>
+        <activity
+            android:name=".Lookthroughdetail"
+            android:label="@string/title_activity_lookthroughdetail" >
+        </activity>
+        <activity
+            android:name=".Givecomment"
+            android:label="@string/title_activity_givecomment" >
+        </activity>
+        <activity
+            android:name=".Lookthroughmenu"
+            android:label="@string/title_activity_lookthroughmenu" >
+        </activity>
     </application>
 
 </manifest>

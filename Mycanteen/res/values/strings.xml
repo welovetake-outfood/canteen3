@@ -9,5 +9,10 @@
     <string name="title_activity_canteenpage_fragment">CanteenpageFragment</string>
     <string name="title_activity_canteenlist_fragment">CanteenlistFragment</string>
     <string name="title_activity_bookcanteen">Bookcanteen</string>
+    <string name="title_activity_leavemessage">Leavemessage</string>
+    <string name="title_activity_birthdaybook">Birthdaybook</string>
+    <string name="title_activity_lookthroughdetail">Lookthroughdetail</string>
+    <string name="title_activity_givecomment">Givecomment</string>
+    <string name="title_activity_lookthroughmenu">Lookthroughmenu</string>
 
 </resources>

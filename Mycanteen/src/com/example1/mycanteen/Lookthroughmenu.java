@@ -7,22 +7,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Bookcanteen extends Activity {
+public class Lookthroughmenu extends Activity {
   public Schoolcanteen.Canteen canteen;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_bookcanteen);
-    TextView canteenname=(TextView) findViewById(R.id.bookcanteentextview);
+    setContentView(R.layout.activity_lookthroughmenu);
+    TextView text=(TextView) findViewById(R.id.lookthroughmenutextview);
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    canteenname.setText(canteen.name);
+    text.setText(canteen.name+" lookthroughmenu");
   }
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.bookcanteen, menu);
+    getMenuInflater().inflate(R.menu.lookthroughmenu, menu);
     return true;
   }
 
