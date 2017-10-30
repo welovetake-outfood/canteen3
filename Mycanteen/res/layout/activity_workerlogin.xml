@@ -2,15 +2,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example1.mycanteen.Workerlogin" >
+    tools:context="com.example1.mycanteen.WorkerLogin" >
 
     <TextView
+        android:id="@+id/Name1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="workerlogin" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/LoginWelcome"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="69dp"
+        android:text="用户名："
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/Password1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/Name1"
+        android:layout_below="@+id/Name1"
+        android:layout_marginTop="25dp"
+        android:text="  密码  ："
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/LoginWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="133dp"
+        android:text="欢迎登录餐厅系统"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/Login1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Password1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="86dp"
+        android:layout_marginLeft="37dp"
+        android:text="登录" />
+
+    <Button
+        android:id="@+id/toRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Login1"
+        android:layout_alignBottom="@+id/Login1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="69dp"
+        android:text="注册" />
+
+    <EditText
+        android:id="@+id/EnterPW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Password1"
+        android:layout_toRightOf="@+id/Password1"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/EnterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Password1"
+        android:layout_toRightOf="@+id/Name1"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/info1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Login1"
+        android:layout_alignLeft="@+id/Login1"
+        android:layout_marginBottom="28dp"
+        android:textColor="#FF0000"
+        android:text="提示："
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

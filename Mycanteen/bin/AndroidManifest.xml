@@ -6,61 +6,37 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="21" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+        android:targetSdkVersion="21" /><application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme" android:hasCode="true">
+        <activity android:name=".MainActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Workerlogin"
-            android:label="@string/title_activity_workerlogin" >
+        <activity android:name=".Workerlogin" android:label="@string/title_activity_workerlogin">
         </activity>
-        <activity
-            android:name=".Studentchoose"
-            android:label="@string/title_activity_studentchoose" >
+        <activity android:name=".Studentchoose" android:label="@string/title_activity_studentchoose">
         </activity>
-        <activity
-            android:name=".CanteenpageFragment"
-            android:label="@string/title_activity_canteenpage_fragment" >
+        <activity android:name=".CanteenpageFragment" android:label="@string/title_activity_canteenpage_fragment">
         </activity>
-        <activity
-            android:name=".CanteenlistFragment"
-            android:label="@string/title_activity_canteenlist_fragment" >
+        <activity android:name=".CanteenlistFragment" android:label="@string/title_activity_canteenlist_fragment">
         </activity>
-        <activity
-            android:name=".Bookcanteen"
-            android:label="@string/title_activity_bookcanteen" >
+        <activity android:name=".Bookcanteen" android:label="@string/title_activity_bookcanteen">
         </activity>
-        <activity
-            android:name=".Leavemessage"
-            android:label="@string/title_activity_leavemessage" >
+        <activity android:name=".Leavemessage" android:label="@string/title_activity_leavemessage">
         </activity>
-        <activity
-            android:name=".Birthdaybook"
-            android:label="@string/title_activity_birthdaybook" >
+        <activity android:name=".Birthdaybook" android:label="@string/title_activity_birthdaybook">
         </activity>
-        <activity
-            android:name=".Lookthroughdetail"
-            android:label="@string/title_activity_lookthroughdetail" >
+        <activity android:name=".Lookthroughdetail" android:label="@string/title_activity_lookthroughdetail">
         </activity>
-        <activity
-            android:name=".Givecomment"
-            android:label="@string/title_activity_givecomment" >
+        <activity android:name=".Givecomment" android:label="@string/title_activity_givecomment">
         </activity>
-        <activity
-            android:name=".Lookthroughmenu"
-            android:label="@string/title_activity_lookthroughmenu" >
+        <activity android:name=".Lookthroughmenu" android:label="@string/title_activity_lookthroughmenu">
+        </activity>
+        <activity android:name=".LoginSuccess" >
+        </activity>
+        <activity android:name=".WorkerRegister" >
         </activity>
     </application>
 
