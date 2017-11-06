@@ -5,5 +5,12 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="jsonjar/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="jsonjar/commons.collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="jsonjar/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="jsonjar/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="jsonjar/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="jsonjar/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="jsonjar/json-lib-2.4-jdk15.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
