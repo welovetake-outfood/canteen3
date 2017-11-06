@@ -31,7 +31,7 @@ public class CanteenpageFragment extends Fragment {
     View rootView=inflater.inflate(R.layout.fragment_canteenpage, container,false);
     if (canteen!=null) {
       ((TextView)rootView.findViewById(R.id.canteenname)).setText(canteen.name);
-      ((TextView)rootView.findViewById(R.id.canteendesc)).setText(canteen.desc);
+      ((TextView)rootView.findViewById(R.id.canteendesc)).setText(canteen.notice);
       final Bundle data=new Bundle();
       data.putSerializable("canteen", canteen);
       //---------------------------------------------------------------
