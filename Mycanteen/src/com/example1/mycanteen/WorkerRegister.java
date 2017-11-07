@@ -43,6 +43,7 @@ public class WorkerRegister extends Activity {
     rg = (RadioGroup) findViewById(R.id.canteenGroup);
     text.setText("ÌבÊ¾:");
     setCanteenid(1);
+    canteenchoice();
     buttonup.setOnClickListener(new View.OnClickListener() {   
         @Override
         public void onClick(View v) {
@@ -86,7 +87,6 @@ public class WorkerRegister extends Activity {
   private int registerPro() {
     String id=workerid.getText().toString();
     String pwd=password.getText().toString();
-    canteenchoice();
     JSONObject jsonObj;
     try {
       //Log.i("TestLog", "bbbbbbbbbbloginpro");
