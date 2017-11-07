@@ -31,7 +31,7 @@ public final class R {
         public static final int EnterName=0x7f090012;
         public static final int EnterPW=0x7f090011;
         public static final int Login1=0x7f09000f;
-        public static final int LoginSuccess=0x7f090004;
+        public static final int LoginSuccesstextview=0x7f090005;
         public static final int LoginWelcome=0x7f09000d;
         public static final int Name=0x7f090016;
         public static final int Name1=0x7f09000c;
@@ -44,7 +44,7 @@ public final class R {
         public static final int action_settings=0x7f09002a;
         public static final int birthdaybooktextview=0x7f090000;
         public static final int bookcanteentextview=0x7f090001;
-        public static final int button1=0x7f090005;
+        public static final int button1=0x7f090004;
         public static final int button2=0x7f090009;
         public static final int buttonbir=0x7f090025;
         public static final int buttonbook=0x7f090024;
@@ -57,8 +57,6 @@ public final class R {
         public static final int canteendesc=0x7f090022;
         public static final int canteenname=0x7f090021;
         public static final int canteenpage_container=0x7f09000b;
-        public static final int editName=0x7f090019;
-        public static final int editPW=0x7f090015;
         public static final int fragmentpagegrid=0x7f090023;
         public static final int givecommenttextview=0x7f090002;
         public static final int info=0x7f090020;
@@ -69,6 +67,8 @@ public final class R {
         public static final int radioHD=0x7f09001d;
         public static final int radioJZ=0x7f09001f;
         public static final int radioQZ=0x7f09001e;
+        public static final int registereditName=0x7f090019;
+        public static final int registereditPW=0x7f090015;
         public static final int textView1=0x7f090008;
         public static final int toRegister=0x7f090010;
     }

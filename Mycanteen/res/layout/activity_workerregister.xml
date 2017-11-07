@@ -8,13 +8,13 @@
         android:id="@+id/Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editPW"
+        android:layout_alignBottom="@+id/registereditPW"
         android:layout_alignLeft="@+id/Name"
         android:text="  密码  ："
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <EditText
-        android:id="@+id/editPW"
+        android:id="@+id/registereditPW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/canteenGroup"
@@ -27,19 +27,19 @@
         android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editPW"
+        android:layout_above="@+id/registereditPW"
         android:layout_marginBottom="14dp"
         android:layout_toLeftOf="@+id/RegisterWelcome"
         android:text="用户名："
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/registereditName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/Name"
         android:layout_alignBottom="@+id/Name"
-        android:layout_alignLeft="@+id/editPW"
+        android:layout_alignLeft="@+id/registereditPW"
         android:ems="10" >
 
         <requestFocus />
@@ -108,7 +108,7 @@
         android:id="@+id/RegisterWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editName"
+        android:layout_above="@+id/registereditName"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:text="欢迎注册餐厅系统"

@@ -53,11 +53,11 @@ public class Schoolcanteen {
   public static List<Canteen> ITEMS=new ArrayList<Canteen>();
   public static Map<Integer,Canteen> ITEM_MAP=new HashMap<Integer,Canteen>();
   static {
-    addItem(new Canteen(1,"学士","学士餐厅","null"));
-    addItem(new Canteen(2,"学苑","学苑餐厅","null"));
-    addItem(new Canteen(3,"黑店","黑店","null"));
-    addItem(new Canteen(4,"回味斋","清真餐厅","null"));
-    addItem(new Canteen(5,"饺子园","饺子园","null"));
+    addItem(new Canteen(1,"学士","学士餐厅","学士餐厅暑假关门"));
+    addItem(new Canteen(2,"学苑","学苑餐厅","学士餐厅暑假继续营业"));
+    addItem(new Canteen(3,"黑店","黑店","新店开业"));
+    addItem(new Canteen(4,"回味斋","清真餐厅","推出手抓羊肉饭"));
+    addItem(new Canteen(5,"饺子园","饺子园","立冬吃饺子"));
   }
   private static void addItem(Canteen canteen) {
     ITEMS.add(canteen);

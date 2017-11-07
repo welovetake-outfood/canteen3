@@ -1,6 +1,7 @@
 package com.example1.mycanteen;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,10 @@ public class LoginSuccess extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_loginsuccess);
+    TextView text=(TextView) findViewById(R.id.LoginSuccesstextview);
+    Intent intent=getIntent();
+    canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
+    text.setText(canteen.name+" login");
   }
 
   @Override

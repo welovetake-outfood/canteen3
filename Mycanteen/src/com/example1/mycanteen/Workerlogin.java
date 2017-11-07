@@ -29,6 +29,7 @@ public class Workerlogin extends Activity {
   EditText id;
   EditText password;
   TextView text;
+  public Schoolcanteen.Canteen canteen;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -43,8 +44,13 @@ public class Workerlogin extends Activity {
         public void onClick(View v) {
             if (validate()) {
               //Log.i("TestLog", "aaaaaaaaaaaaaa");
-                if (loginPro()>0) {
+              int canteenid=loginPro();
+                if (canteenid>0) {
+                  canteen=Schoolcanteen.ITEM_MAP.get(canteenid);
+                  final Bundle data=new Bundle();
+                  data.putSerializable("canteen", canteen);
                   Intent intent=new Intent(Workerlogin.this,LoginSuccess.class);
+                  intent.putExtras(data);
                   startActivity(intent);
                   finish();
                 }
