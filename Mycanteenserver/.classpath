@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="lib" path="E:/learn/java/json/commons-lang-2.6.jar/commons-lang-2.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-lang-2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/learn/android/sdk/android-sdk_r24.3.2-windows/android-sdk-windows/platforms/android-21/android.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

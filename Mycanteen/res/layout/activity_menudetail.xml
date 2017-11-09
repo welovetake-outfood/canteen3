@@ -14,4 +14,12 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    <ImageView
+        android:id="@+id/menudetailimageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/menudetailtextview"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/xs01" />
+
 </RelativeLayout>
