@@ -58,8 +58,7 @@ public class WorkerRegister extends Activity {
               }
             }            
         }
-    });
-        
+    });        
     }
   
   private boolean validate() {

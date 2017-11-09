@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LoginSuccess extends Activity {
@@ -18,6 +18,8 @@ public class LoginSuccess extends Activity {
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
     text.setText(canteen.name+" login");
+    ImageView image=(ImageView) findViewById(R.id.loginsuccessimageView);
+    image.setImageResource(R.drawable.xs02);
   }
 
   @Override

@@ -22,4 +22,13 @@
         android:text="登陆成功！"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <ImageView
+        android:id="@+id/loginsuccessimageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LoginSuccesstextview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:src="@drawable/ic_launcher" />
+
 </RelativeLayout>
