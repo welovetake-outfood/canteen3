@@ -163,7 +163,7 @@ public class Dao {
   public int login(String id,String password)
   {
     int canteenid=0;
-    String sql="select canteenid from workerlogin where id=\""+id+"\" and password=\""+password+"\"";
+    String sql="select canteenid from workerinfo where id=\""+id+"\" and password=\""+password+"\"";
     System.out.println(sql);
     PreparedStatement ps=null;
     System.out.println(canteenid);
