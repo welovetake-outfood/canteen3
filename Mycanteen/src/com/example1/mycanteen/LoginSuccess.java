@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,10 +16,46 @@ public class LoginSuccess extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_loginsuccess);
-    TextView text=(TextView) findViewById(R.id.LoginSuccesstextview);
-    Intent intent=getIntent();
-    canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    text.setText(canteen.name+" login");
+    Button buttonup1 = (Button) findViewById(R.id.WorkerFuntion1);
+    buttonup1.setOnClickListener(new View.OnClickListener() {   
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(LoginSuccess.this,AddMenu.class);
+            startActivity(intent);
+        }
+    });
+    Button buttonup2 = (Button) findViewById(R.id.WorkerFuntion2);
+    buttonup2.setOnClickListener(new View.OnClickListener() {   
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(LoginSuccess.this,ReleaseAnnouncement.class);
+            startActivity(intent);
+        }
+    });
+    Button buttonup3 = (Button) findViewById(R.id.WorkerFuntion3);
+    buttonup3.setOnClickListener(new View.OnClickListener() {   
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(LoginSuccess.this,CheckBirthday.class);
+            startActivity(intent);
+        }
+    });
+    Button buttonup4 = (Button) findViewById(R.id.WorkerFuntion4);
+    buttonup4.setOnClickListener(new View.OnClickListener() {   
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(LoginSuccess.this,CheckAppointment.class);
+            startActivity(intent);
+        }
+    });
+    Button buttonup5 = (Button) findViewById(R.id.WorkerFuntion5);
+    buttonup5.setOnClickListener(new View.OnClickListener() {   
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(LoginSuccess.this,ViewMassage.class);
+            startActivity(intent);
+        }
+    });
   }
 
   @Override

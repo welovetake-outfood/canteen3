@@ -38,6 +38,16 @@
         </activity>
         <activity android:name=".WorkerRegister" >
         </activity>
+        <activity android:name=".AddMenu" >
+        </activity>
+        <activity android:name=".ReleaseAnnouncement" >
+        </activity>
+        <activity android:name=".ViewMassage" >
+        </activity>
+        <activity android:name=".CheckBirthday" >
+        </activity>
+        <activity android:name=".CheckAppointment" >
+        </activity>
     </application>
 
 </manifest>

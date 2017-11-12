@@ -32,4 +32,13 @@
         android:layout_marginTop="25dp"
         android:text="student" />
 
+    <Button
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button2"
+        android:layout_marginBottom="45dp"
+        android:text="Button" />
+
 </RelativeLayout>
