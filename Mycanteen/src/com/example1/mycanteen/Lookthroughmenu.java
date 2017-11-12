@@ -34,19 +34,19 @@ public class Lookthroughmenu extends Activity {
   private List<Dish> mdatas;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    Log.i("TestLog", "aaaaaaaaaaaaaaa");
+    //Log.i("TestLog", "aaaaaaaaaaaaaaa");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_lookthroughmenu);
-    Log.i("TestLog", "bbbbbbbbbbbmenu");
+    //Log.i("TestLog", "bbbbbbbbbbbmenu");
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    Log.i("TestLog", "cccccccccccccccmenu");
+    //Log.i("TestLog", "cccccccccccccccmenu");
     mHorizontalScrollView = (MyHorizontalScrollView) findViewById(R.id.id_horizontalScrollView);
-    Log.i("TestLog", "ddddddddddddmenu");
+    //Log.i("TestLog", "ddddddddddddmenu");
     mImg=(ImageView) findViewById(R.id.id_content);  
-    Log.i("TestLog", "eeeeeeeeeeeeeeeeeemenu");
+    //Log.i("TestLog", "eeeeeeeeeeeeeeeeeemenu");
     mdatas=getdish(canteen.getId());
-    Log.i("TestLog", "fffffffffffffmenu");
+    //Log.i("TestLog", "fffffffffffffmenu");
     mAdapter = new HorizontalScrollViewAdapter(this, mdatas);
   //添加滚动回调  
     //Log.i("TestLog", "ccccccccccccc");

@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-import android.widget.RatingBar.OnRatingBarChangeListener;
+//import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 
 public class Menudetail extends Activity {

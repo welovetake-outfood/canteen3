@@ -64,13 +64,24 @@
             android:name=".Lookthroughmenu"
             android:label="@string/title_activity_lookthroughmenu" >
         </activity>
+        <activity
+            android:name=".Menudetail"
+            android:label="@string/title_activity_menudetail" >
+        </activity>
+        
         <activity android:name=".LoginSuccess" >
         </activity>
         <activity android:name=".WorkerRegister" >
         </activity>
-        <activity
-            android:name=".Menudetail"
-            android:label="@string/title_activity_menudetail" >
+        <activity android:name=".AddMenu" >
+        </activity>
+        <activity android:name=".ReleaseAnnouncement" >
+        </activity>
+        <activity android:name=".ViewMassage" >
+        </activity>
+        <activity android:name=".CheckBirthday" >
+        </activity>
+        <activity android:name=".CheckAppointment" >
         </activity>
     </application>
 

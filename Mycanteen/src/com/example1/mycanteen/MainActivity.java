@@ -33,6 +33,15 @@ public class MainActivity extends Activity {
           startActivity(intent);
         }
     });
+    Button temp=(Button) findViewById(R.id.temp);
+    temp.setOnClickListener(new OnClickListener()
+        {
+            public void onClick(View source)
+            {
+              Intent intent=new Intent(MainActivity.this,LoginSuccess.class);
+              startActivity(intent);
+            }
+        });
   }
 
   @Override
