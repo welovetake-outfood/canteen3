@@ -2,6 +2,10 @@ package com;
 
 import java.sql.*;
 import java.util.*;
+
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 
 public class Dao {
@@ -157,9 +161,11 @@ public class Dao {
   public DbPool getDbp() {
     return dbp;
   }
+  
   public void setDbp(DbPool dbp) {
     this.dbp = dbp;
   }
+  
   public int login(String id,String password)
   {
     int canteenid=0;
@@ -185,4 +191,81 @@ public class Dao {
     }
     return canteenid;
   }
+<<<<<<< HEAD
 }
+=======
+  
+  public String getdesc(int canteenid) {
+    String canteendesc="";
+    String sql="select canteendesc from canteen where canteenid="+canteenid;
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      ResultSet rs=ps.executeQuery();
+      if (rs.next())
+      {
+        canteendesc+=rs.getString("canteendesc");
+      }
+      //ps.close();
+      System.out.println(canteendesc);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return canteendesc;
+  }
+
+  public int register(String id,String password,String canteenid) {
+    int rflag=0;
+    String sql="insert into workerlogin values(\""+id+"\",\""+password+"\","+canteenid+")";
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      rflag=ps.executeUpdate();
+      ps.close();
+      System.out.println("rflag="+rflag);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return rflag;
+  }
+  
+  public List<Dish> getdish(String canteenid){
+    List<Dish> dishlist=new ArrayList<Dish>();
+    String sql="select * from menu where canteenid="+canteenid;
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      ResultSet rs=ps.executeQuery();
+      while (rs.next())
+      {
+        Dish dish=new Dish();
+        dish.setCanteenid(Integer.valueOf(canteenid));
+        dish.setDishintrodiction(rs.getString("dishintroduction"));
+        dish.setDishprice(rs.getInt("dishprice"));
+        dish.setDishscore(rs.getFloat("dishscore"));
+        dish.setPicturename(rs.getString("picturename"));
+        dishlist.add(dish);
+      }
+      ps.close();
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return dishlist;
+  }
+  
+}
+>>>>>>> 4b724d753b15e57dda11a31e7ad7df9c059c72c7

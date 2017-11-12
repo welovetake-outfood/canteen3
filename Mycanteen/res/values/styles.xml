@@ -16,5 +16,12 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="RadingStyle" parent="@android:style/Widget.RatingBar">
+    <!-- 定义星星图片 -->
+    <item name="android:progressDrawable">@drawable/rating_bar</item>
+    <!-- 根据自定义星星图片的大小,设置相应的值,否则可能显示不全 -->
+    <item name="android:minHeight">80dp</item>
+</style>
 
 </resources>

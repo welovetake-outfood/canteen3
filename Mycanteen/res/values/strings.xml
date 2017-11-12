@@ -14,5 +14,6 @@
     <string name="title_activity_lookthroughdetail">Lookthroughdetail</string>
     <string name="title_activity_givecomment">Givecomment</string>
     <string name="title_activity_lookthroughmenu">Lookthroughmenu</string>
+    <string name="title_activity_menudetail">Menudetail</string>
 
 </resources>
