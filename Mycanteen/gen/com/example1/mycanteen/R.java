@@ -26,64 +26,77 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int xs01=0x7f020001;
-        public static final int xs02=0x7f020002;
-        public static final int xs03=0x7f020003;
-        public static final int xs04=0x7f020004;
-        public static final int xs05=0x7f020005;
-        public static final int xs06=0x7f020006;
+        public static final int rating_bar=0x7f020001;
+        public static final int rating_bar_1=0x7f020002;
+        public static final int rating_bar_4=0x7f020003;
+        public static final int rating_bar_6=0x7f020004;
+        public static final int xs01=0x7f020005;
+        public static final int xs02=0x7f020006;
+        public static final int xs03=0x7f020007;
+        public static final int xs04=0x7f020008;
+        public static final int xs05=0x7f020009;
+        public static final int xs06=0x7f02000a;
     }
     public static final class id {
-        public static final int EnterName=0x7f090019;
-        public static final int EnterPW=0x7f090018;
-        public static final int Login1=0x7f090016;
+        public static final int EnterName=0x7f090022;
+        public static final int EnterPW=0x7f090021;
+        public static final int Login1=0x7f09001f;
         public static final int LoginSuccesstextview=0x7f090007;
-        public static final int LoginWelcome=0x7f090014;
-        public static final int Name=0x7f09001d;
-        public static final int Name1=0x7f090013;
-        public static final int Password=0x7f09001b;
-        public static final int Password1=0x7f090015;
-        public static final int RadioXS=0x7f090022;
-        public static final int RadioXY=0x7f090023;
-        public static final int Register=0x7f090021;
-        public static final int RegisterWelcome=0x7f09001f;
-        public static final int action_settings=0x7f090031;
+        public static final int LoginWelcome=0x7f09001d;
+        public static final int Name=0x7f090026;
+        public static final int Name1=0x7f09001c;
+        public static final int Password=0x7f090024;
+        public static final int Password1=0x7f09001e;
+        public static final int RadioXS=0x7f09002b;
+        public static final int RadioXY=0x7f09002c;
+        public static final int Register=0x7f09002a;
+        public static final int RegisterWelcome=0x7f090028;
+        public static final int action_settings=0x7f09003a;
         public static final int birthdaybooktextview=0x7f090000;
         public static final int bookcanteentextview=0x7f090001;
         public static final int button1=0x7f090006;
         public static final int button2=0x7f09000e;
-        public static final int buttonbir=0x7f09002c;
-        public static final int buttonbook=0x7f09002b;
-        public static final int buttoncomment=0x7f09002f;
-        public static final int buttondetail=0x7f090030;
-        public static final int buttonlm=0x7f09002d;
-        public static final int buttonmenu=0x7f09002e;
-        public static final int canteenGroup=0x7f09001e;
-        public static final int canteen_list=0x7f090011;
-        public static final int canteendesc=0x7f090029;
-        public static final int canteenname=0x7f090028;
-        public static final int canteenpage_container=0x7f090012;
-        public static final int fragmentpagegrid=0x7f09002a;
+        public static final int buttonbir=0x7f090035;
+        public static final int buttonbook=0x7f090034;
+        public static final int buttoncomment=0x7f090038;
+        public static final int buttondetail=0x7f090039;
+        public static final int buttonlm=0x7f090036;
+        public static final int buttonmenu=0x7f090037;
+        public static final int canteenGroup=0x7f090027;
+        public static final int canteen_list=0x7f09001a;
+        public static final int canteendesc=0x7f090032;
+        public static final int canteenname=0x7f090031;
+        public static final int canteenpage_container=0x7f09001b;
+        public static final int fragmentpagegrid=0x7f090033;
         public static final int givecommenttextview=0x7f090002;
         public static final int id_content=0x7f09000a;
         public static final int id_gallery=0x7f09000c;
         public static final int id_horizontalScrollView=0x7f09000b;
         public static final int id_index_gallery_item_image=0x7f090003;
         public static final int id_index_gallery_item_text=0x7f090004;
-        public static final int info=0x7f090027;
-        public static final int info1=0x7f09001a;
+        public static final int info=0x7f090030;
+        public static final int info1=0x7f090023;
         public static final int leavemessagetextview=0x7f090005;
+        public static final int linearLayout1=0x7f090016;
         public static final int loginsuccessimageView=0x7f090008;
         public static final int lookthroughdetailtextview=0x7f090009;
-        public static final int menudetailimageView1=0x7f090010;
-        public static final int menudetailtextview=0x7f09000f;
-        public static final int radioHD=0x7f090024;
-        public static final int radioJZ=0x7f090026;
-        public static final int radioQZ=0x7f090025;
-        public static final int registereditName=0x7f090020;
-        public static final int registereditPW=0x7f09001c;
+        public static final int menudetailbutton1=0x7f090013;
+        public static final int menudetaileditText=0x7f090010;
+        public static final int menudetailimageView1=0x7f090014;
+        public static final int menudetailratingBar1=0x7f090012;
+        public static final int menudetailtextView2=0x7f090017;
+        public static final int menudetailtextView3=0x7f090018;
+        public static final int menudetailtextView4=0x7f090019;
+        public static final int menudetailtextView5=0x7f09000f;
+        public static final int menudetailtextView6=0x7f090011;
+        public static final int menudetailtextview1=0x7f090015;
+        public static final int radioHD=0x7f09002d;
+        public static final int radioJZ=0x7f09002f;
+        public static final int radioQZ=0x7f09002e;
+        public static final int registereditName=0x7f090029;
+        public static final int registereditPW=0x7f090025;
         public static final int textView1=0x7f09000d;
-        public static final int toRegister=0x7f090017;
+        public static final int toRegister=0x7f090020;
     }
     public static final class layout {
         public static final int activity_birthdaybook=0x7f030000;
@@ -163,5 +176,6 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
+        public static final int RadingStyle=0x7f070002;
     }
 }

@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +8,109 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example1.mycanteen.Menudetail" >
 
-    <TextView
-        android:id="@+id/menudetailtextview"
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="50dp"
+        android:layout_x="16dp"
+        android:layout_y="204dp"
+        android:columnCount="2" >
+
+        <TextView
+            android:id="@+id/menudetailtextView5"
+            android:layout_column="0"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:text="评论："
+            android:textSize="8pt" />
+
+        <EditText
+            android:id="@+id/menudetaileditText"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/menudetailtextView6"
+            android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:layout_row="3"
+            android:text="打分："
+            android:textSize="8pt" />
+
+        <RatingBar
+            android:id="@+id/menudetailratingBar1"
+            style="@style/RadingStyle"
+            android:layout_width="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:layout_row="3"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="0.5" />
+
+        <Button
+            android:id="@+id/menudetailbutton1"
+            android:layout_column="1"
+            android:layout_gravity="right|top"
+            android:layout_row="3"
+            android:minHeight="2dp"
+            android:minWidth="2dp"
+            android:text="提交" />
+    </GridLayout>
 
     <ImageView
         android:id="@+id/menudetailimageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/menudetailtextview"
-        android:layout_alignParentBottom="true"
+        android:layout_width="420px"
+        android:layout_height="420px"
+        android:layout_x="145dp"
+        android:layout_y="18dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/xs01" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/menudetailtextview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="-3dp"
+        android:layout_y="-1dp"
+        android:text="@string/hello_world"
+        android:textSize="16pt" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_x="4dp"
+        android:layout_y="65dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/menudetailtextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格："
+            android:textSize="8pt" />
+
+        <TextView
+            android:id="@+id/menudetailtextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评分："
+            android:textSize="8pt" />
+
+        <TextView
+            android:id="@+id/menudetailtextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:text="介绍："
+            android:textSize="8pt" />
+    </LinearLayout>
+
+</AbsoluteLayout>
