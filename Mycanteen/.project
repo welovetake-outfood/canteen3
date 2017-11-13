@@ -30,4 +30,36 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>res/drawable-mdpi/b1.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Documents/Tencent%20Files/870880313/FileRecv/b1.jpg</locationURI>
+		</link>
+		<link>
+			<name>res/drawable-mdpi/b2.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Documents/Tencent%20Files/870880313/FileRecv/b2.jpg</locationURI>
+		</link>
+		<link>
+			<name>res/drawable-mdpi/b3.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Documents/Tencent%20Files/870880313/FileRecv/b3.jpg</locationURI>
+		</link>
+		<link>
+			<name>res/drawable-mdpi/b4.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Documents/Tencent%20Files/870880313/FileRecv/b4.jpg</locationURI>
+		</link>
+		<link>
+			<name>res/drawable-mdpi/b5.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Documents/Tencent%20Files/870880313/FileRecv/b5.jpg</locationURI>
+		</link>
+		<link>
+			<name>res/drawable-mdpi/b6.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Documents/Tencent%20Files/870880313/FileRecv/b6.jpg</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
