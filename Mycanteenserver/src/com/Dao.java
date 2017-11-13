@@ -253,6 +253,7 @@ public class Dao {
         dish.setDishprice(rs.getInt("dishprice"));
         dish.setDishscore(rs.getFloat("dishscore"));
         dish.setPicturename(rs.getString("picturename"));
+        dish.setCommentpeople(rs.getInt("commentpeople"));
         dishlist.add(dish);
       }
       ps.close();
@@ -264,4 +265,65 @@ public class Dao {
     return dishlist;
   }
   
+  public int addcomment(int commentnumber,String comment,String dishname) {   
+    int rflag=0;
+    String sql="insert into dishcomment values("+commentnumber+",\""+comment+"\",\""+dishname+"\")";
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      rflag=ps.executeUpdate();
+      ps.close();
+      System.out.println("rflag="+rflag);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return rflag;
+  }
+  
+  public int getdishamount()
+  {
+    int i=0;
+    String sql="select count(*) from dishcomment";
+    PreparedStatement ps=null;
+    try
+    {
+      ps=DbPool.getConn().prepareStatement(sql);
+      ResultSet rs=ps.executeQuery();
+      if (rs.next())
+      {
+        i=rs.getInt(1);
+      }
+      ps.close();
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return i;
+  }
+  
+  public int changescore(String score,String commentpeople,String dishname) {
+    int rflag=0;
+    String sql="update menu set dishscore="+score+",commentpeople="+commentpeople+" where picturename=\""+dishname+"\"";
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      rflag=ps.executeUpdate();
+      ps.close();
+      System.out.println("rflag="+rflag);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return rflag;
+  } 
 }

@@ -6,6 +6,13 @@ public class Dish {
   private int dishprice;
   private float dishscore;
   private int canteenid;
+  private int commentpeople;
+  public int getCommentpeople() {
+    return commentpeople;
+  }
+  public void setCommentpeople(int commentpeople) {
+    this.commentpeople = commentpeople;
+  }
   public String getPicturename() {
     return picturename;
   }
