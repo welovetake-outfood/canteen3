@@ -1,25 +1,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
+    android:background="@drawable/b5_1"
     android:divider="?android:attr/dividerHorizontal"
-    android:showDividers="middle"
-    >
+    android:orientation="vertical"
+    android:showDividers="middle" >
 
-    <fragment
-        android:id="@+id/canteen_list"
-        android:name="com.example1.mycanteen.CanteenlistFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.65" >
 
-    <FrameLayout
-        android:id="@+id/canteenpage_container"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="      选择食堂"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="414dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.51" >
+
+        <fragment
+            android:id="@+id/canteen_list"
+            android:name="com.example1.mycanteen.CanteenlistFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/canteenpage_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+    </TableRow>
 
 </LinearLayout>

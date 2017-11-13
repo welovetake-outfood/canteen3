@@ -17,15 +17,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_alignRight="@+id/textView1"
-        android:text="worker" />
-
-    <Button
         android:id="@+id/temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,13 +24,25 @@
         android:layout_alignParentTop="true"
         android:text="Button" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignRight="@+id/temp"
+        android:background="#00000000"
+        android:src="@drawable/log21"
+        android:text="worker" />
+
+    <ImageButton
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/temp"
-        android:layout_marginRight="26dp"
-        android:text="student" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="14dp"
+        android:background="#00000000"
+        android:src="@drawable/log11"
+        android:text="wstudent" />
 
 </RelativeLayout>
