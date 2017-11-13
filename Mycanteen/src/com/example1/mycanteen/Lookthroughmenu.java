@@ -87,7 +87,7 @@ public class Lookthroughmenu extends Activity {
               public void onClick(View v)
               {
                 final Bundle data=new Bundle();
-                data.putSerializable("dish", (mdatas.get(ptemp)));
+                data.putSerializable("picturename", (mdatas.get(ptemp)).getPicturename());
                 Intent intent=new Intent(Lookthroughmenu.this,Menudetail.class);
                 intent.putExtras(data);
                 startActivity(intent);
