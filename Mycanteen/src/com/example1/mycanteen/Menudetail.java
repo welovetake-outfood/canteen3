@@ -1,9 +1,12 @@
 package com.example1.mycanteen;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.example1.mycanteen.R.drawable;
@@ -24,7 +27,7 @@ import android.widget.TextView;
 
 public class Menudetail extends Activity {
   Dish dish;
-  
+  String picturename;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -38,7 +41,8 @@ public class Menudetail extends Activity {
     final EditText comment=(EditText) findViewById(R.id.menudetaileditText);
     Button commitcomment=(Button) findViewById(R.id.menudetailbutton1);
     Intent intent=getIntent();
-    dish=(Dish)intent.getSerializableExtra("dish");
+    picturename=(String)intent.getSerializableExtra("picturename");
+    dish=getadish(picturename);
     text1.setText(dish.getPicturename());
     text2.append(Integer.toString(dish.getDishprice()));
     text3.append((dish.getDishscore())+"");
@@ -62,7 +66,7 @@ public class Menudetail extends Activity {
         float finalscore=(commentpeople*(dish.getDishscore())+score)/(commentpeople+1);
         if (addcomment(usercomment,dishname)>0 && changescore(finalscore,commentpeople+1,dishname)>0) {
           final Bundle data=new Bundle();
-          data.putSerializable("dish",dish);
+          data.putSerializable("picturename",picturename);
           Intent intent=new Intent(Menudetail.this,Menudetail.class);
           intent.putExtras(data);
           startActivity(intent);
@@ -76,6 +80,40 @@ public class Menudetail extends Activity {
     
   }
  
+  private Dish getadish(String picturename){
+    Dish a=new Dish();
+    JSONObject o;
+    try {
+      //Log.i("TestLog", "bbbbbbbbbbloginpro");
+      o=getdishjson(picturename);
+      //for (int i=0;i<o.length();i++)
+      //{
+        //JSONObject jsonobject=o.getJSONObject(picturename);
+        //Dish a=new Dish();
+        a.setCanteenid(o.getInt("canteenid"));
+        a.setDishintrodiction(o.getString("dishintrodiction"));
+        a.setDishprice(o.getInt("dishprice"));
+        a.setDishscore((float)o.getDouble("dishscore"));
+        a.setPicturename(o.getString("picturename"));
+        a.setCommentpeople(o.getInt("commentpeople"));
+        //d.add(a);
+      //}
+      //d= (List<Dish>)JSONArray.toCollection(o, Dish.class); //!!!!!!!!!!!!!!
+      //d=(List)o.get("dish");
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+    return a;
+  }
+  
+  private JSONObject getdishjson(String picturename) throws Exception{
+    Map<String,String> map=new HashMap<String,String>();
+    map.put("picturename", picturename);
+    String url=HttpUtil.BASE_URL+"GetdishServlet";
+    JSONObject o=new JSONObject(HttpUtil.postRequest(url,map));
+    return o;
+  }
   
   private int changescore(float score,int commentpeople,String dishname) {
     JSONObject jsonObj;
