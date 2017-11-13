@@ -83,6 +83,10 @@
         </activity>
         <activity android:name=".CheckAppointment" >
         </activity>
+        <activity android:name=".ExistingMenu" >
+        </activity>
+        <activity android:name=".NewMenu" >
+        </activity>
     </application>
 
 </manifest>

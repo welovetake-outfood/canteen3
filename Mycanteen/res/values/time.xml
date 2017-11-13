@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="time">
+        <item>2017/11/12 12:00</item>
+	    <item>2017/11/12 17:00</item>
+	    <item>2017/11/13 12:00</item>
+	    <item>2017/11/13 16:00</item>
+	    <item>2017/11/12 12:00</item>
+        <item>2017/11/12 17:00</item>
+        <item>2017/11/13 12:00</item>
+        <item>2017/11/13 16:00</item>
+        <item>2017/11/12 12:00</item>
+        <item>2017/11/12 17:00</item>
+    </string-array>
+</resources>
