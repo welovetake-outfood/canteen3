@@ -43,7 +43,7 @@ public class Menudetail extends Activity {
     Intent intent=getIntent();
     picturename=(String)intent.getSerializableExtra("picturename");
     dish=getadish(picturename);
-    text1.setText(dish.getPicturename());
+    text1.setText(dish.getDishname());
     text2.append(Integer.toString(dish.getDishprice()));
     text3.append((dish.getDishscore())+"");
     text4.append(dish.getDishintrodiction());
@@ -96,6 +96,7 @@ public class Menudetail extends Activity {
         a.setDishscore((float)o.getDouble("dishscore"));
         a.setPicturename(o.getString("picturename"));
         a.setCommentpeople(o.getInt("commentpeople"));
+        a.setDishname(o.getString("dishname"));
         //d.add(a);
       //}
       //d= (List<Dish>)JSONArray.toCollection(o, Dish.class); //!!!!!!!!!!!!!!

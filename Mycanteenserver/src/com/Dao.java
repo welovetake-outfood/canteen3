@@ -254,6 +254,7 @@ public class Dao {
         dish.setDishscore(rs.getFloat("dishscore"));
         dish.setPicturename(rs.getString("picturename"));
         dish.setCommentpeople(rs.getInt("commentpeople"));
+        dish.setDishname(rs.getString("dishname"));
         dishlist.add(dish);
       }
       ps.close();
@@ -344,8 +345,9 @@ public class Dao {
         dish.setDishscore(rs.getFloat("dishscore"));
         dish.setPicturename(rs.getString("picturename"));
         dish.setCommentpeople(rs.getInt("commentpeople"));
-      ps.close();
+        dish.setDishname(rs.getString("dishname"));     
       }
+      ps.close();
     }
     catch(Exception e)
     {

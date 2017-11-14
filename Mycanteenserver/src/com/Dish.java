@@ -7,6 +7,13 @@ public class Dish {
   private float dishscore;
   private int canteenid;
   private int commentpeople;
+  private String dishname;
+  public String getDishname() {
+    return dishname;
+  }
+  public void setDishname(String dishname) {
+    this.dishname = dishname;
+  }
   public int getCommentpeople() {
     return commentpeople;
   }

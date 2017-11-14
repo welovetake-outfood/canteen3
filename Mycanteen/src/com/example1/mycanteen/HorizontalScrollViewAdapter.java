@@ -71,7 +71,7 @@ public class HorizontalScrollViewAdapter  extends BaseAdapter
             Log.i("ERROR", "PICTURE NOT¡¡FOUND£¡");
         }
         //viewHolder.mImg.setImageResource(mDatas.get(position));  
-        viewHolder.mText.setText(mDatas.get(position).getDishintrodiction());  
+        viewHolder.mText.setText(mDatas.get(position).getDishname());  
   
         return convertView;  
     }  

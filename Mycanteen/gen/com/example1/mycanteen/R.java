@@ -27,18 +27,20 @@ public final class R {
     }
     public static final class drawable {
         public static final int add_launcher=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int rating_bar=0x7f020002;
-        public static final int rating_bar_1=0x7f020003;
-        public static final int rating_bar_4=0x7f020004;
-        public static final int rating_bar_6=0x7f020005;
-        public static final int test_launcher=0x7f020006;
-        public static final int xs01=0x7f020007;
-        public static final int xs02=0x7f020008;
-        public static final int xs03=0x7f020009;
-        public static final int xs04=0x7f02000a;
-        public static final int xs05=0x7f02000b;
-        public static final int xs06=0x7f02000c;
+        public static final int b1=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int rating_bar=0x7f020003;
+        public static final int rating_bar_1=0x7f020004;
+        public static final int rating_bar_4=0x7f020005;
+        public static final int rating_bar_6=0x7f020006;
+        public static final int test_launcher=0x7f020007;
+        public static final int xs01=0x7f020008;
+        public static final int xs02=0x7f020009;
+        public static final int xs03=0x7f02000a;
+        public static final int xs04=0x7f02000b;
+        public static final int xs05=0x7f02000c;
+        public static final int xs06=0x7f02000d;
+        public static final int xs07=0x7f02000e;
     }
     public static final class id {
         public static final int EnterName=0x7f090027;
