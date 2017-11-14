@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+=======
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk">
 		<attributes>
@@ -17,4 +22,5 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-lang-2.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="E:/learn/android/sdk/android-sdk_r24.3.2-windows/android-sdk-windows/platforms/android-21/android.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
+>>>>>>> 8bd6090b3318933efa54fa2c568ac46b41814b92
 </classpath>

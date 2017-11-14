@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    Button bnworker=(Button) findViewById(R.id.button1);
+    ImageButton bnworker=(ImageButton) findViewById(R.id.button1);
     bnworker.setOnClickListener(new OnClickListener()
         {
             public void onClick(View source)
@@ -24,7 +25,7 @@ public class MainActivity extends Activity {
               startActivity(intent);
             }
         });
-    Button bnstudent=(Button) findViewById(R.id.button2);
+    ImageButton bnstudent=(ImageButton) findViewById(R.id.button2);
     bnstudent.setOnClickListener(new OnClickListener()
     {
         public void onClick(View source)

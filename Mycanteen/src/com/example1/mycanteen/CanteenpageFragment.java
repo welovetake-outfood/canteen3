@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class CanteenpageFragment extends Fragment {
@@ -35,7 +36,7 @@ public class CanteenpageFragment extends Fragment {
       final Bundle data=new Bundle();
       data.putSerializable("canteen", canteen);
       //---------------------------------------------------------------
-      Button bnbook=(Button)rootView.findViewById(R.id.buttonbook);
+      ImageButton bnbook=(ImageButton)rootView.findViewById(R.id.buttonbook);
       bnbook.setOnClickListener(new OnClickListener()
       {
           public void onClick(View v)
@@ -46,7 +47,7 @@ public class CanteenpageFragment extends Fragment {
           }
       });
       //------------------------------------------------------------
-      Button bnlm=(Button)rootView.findViewById(R.id.buttonlm);
+      ImageButton bnlm=(ImageButton)rootView.findViewById(R.id.buttonlm);
       bnlm.setOnClickListener(new OnClickListener()
       {
           public void onClick(View v)
@@ -57,7 +58,7 @@ public class CanteenpageFragment extends Fragment {
           }
       });
       //----------------------------------------------------------------
-      Button bnbir=(Button)rootView.findViewById(R.id.buttonbir);
+      ImageButton bnbir=(ImageButton)rootView.findViewById(R.id.buttonbir);
       bnbir.setOnClickListener(new OnClickListener()
       {
           public void onClick(View v)
@@ -68,7 +69,7 @@ public class CanteenpageFragment extends Fragment {
           }
       });
       //------------------------------------------------------------------------
-      Button bncomment=(Button)rootView.findViewById(R.id.buttoncomment);
+      ImageButton bncomment=(ImageButton)rootView.findViewById(R.id.buttoncomment);
       bncomment.setOnClickListener(new OnClickListener()
       {
           public void onClick(View v)
@@ -79,7 +80,7 @@ public class CanteenpageFragment extends Fragment {
           }
       });
       //-------------------------------------------------------------------------
-      Button bnmenu=(Button)rootView.findViewById(R.id.buttonmenu);
+      ImageButton bnmenu=(ImageButton)rootView.findViewById(R.id.buttonmenu);
       bnmenu.setOnClickListener(new OnClickListener()
       {
           public void onClick(View v)
@@ -90,7 +91,7 @@ public class CanteenpageFragment extends Fragment {
           }
       });
       //----------------------------------------------------------------------------
-      Button bndetail=(Button)rootView.findViewById(R.id.buttondetail);
+      ImageButton bndetail=(ImageButton)rootView.findViewById(R.id.buttondetail);
       bndetail.setOnClickListener(new OnClickListener()
       {
           public void onClick(View v)

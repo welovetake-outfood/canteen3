@@ -1,63 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/b4"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/LoginSuccesstextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
-        android:layout_toLeftOf="@+id/WorkerFuntion2"
-        android:text="登陆成功！"
+        android:text="      登陆成功！"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-
-    <Button
-        android:id="@+id/WorkerFuntion1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/WorkerFuntion2"
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="298dp"
         android:layout_below="@+id/LoginSuccesstextview"
-        android:layout_marginTop="36dp"
-        android:text="添加食谱" />
+        android:layout_gravity="bottom"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@+id/WorkerFuntion3"
+        android:layout_weight="0.56" >
 
-    <Button
-        android:id="@+id/WorkerFuntion2"
-        android:layout_width="wrap_content"
+        <ImageButton
+            android:id="@+id/WorkerFuntion1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="26dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/button71"
+            android:text="添加食谱" />
+
+        <ImageButton
+            android:id="@+id/WorkerFuntion2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="26dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/button81"
+            android:text="发布公告" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/WorkerFuntion1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:text="发布公告" />
+        android:layout_gravity="bottom"
+        android:layout_weight="0.25" >
 
-    <Button
-        android:id="@+id/WorkerFuntion5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/WorkerFuntion4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:text="查看建议与反馈" />
+        <ImageButton
+            android:id="@+id/WorkerFuntion4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="26dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/button611"
+            android:text="查看包厢预约" />
 
-    <Button
-        android:id="@+id/WorkerFuntion3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/WorkerFuntion5"
-        android:layout_below="@+id/WorkerFuntion2"
-        android:layout_marginTop="26dp"
-        android:text="查看生日餐预约" />
+        <ImageButton
+            android:id="@+id/WorkerFuntion3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="26dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/button511"
+            android:text="查看生日餐预约" />
 
-    <Button
-        android:id="@+id/WorkerFuntion4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/WorkerFuntion3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:text="查看包厢预约" />
+        <ImageButton
+            android:id="@+id/WorkerFuntion5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="26dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/button91"
+            android:text="查看建议与反馈" />
+    </TableRow>
 
-</RelativeLayout>
+</LinearLayout>
