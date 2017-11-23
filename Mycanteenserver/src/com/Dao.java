@@ -356,4 +356,46 @@ public class Dao {
     return dish;
   }
   
+  public int getmessageamount()
+  {
+    int i=0;
+    String sql="select count(*) from canteenmessage";
+    PreparedStatement ps=null;
+    try
+    {
+      ps=DbPool.getConn().prepareStatement(sql);
+      ResultSet rs=ps.executeQuery();
+      if (rs.next())
+      {
+        i=rs.getInt(1);
+      }
+      ps.close();
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return i;
+  }
+
+  public int addmessage(int messagenumber,String msg,String canteenid) {   
+    int rflag=0;
+    String sql="insert into canteenmessage values("+messagenumber+",\""+msg+"\","+canteenid+")";
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      rflag=ps.executeUpdate();
+      ps.close();
+      System.out.println("rflag="+rflag);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return rflag;
+  }
+  
 }

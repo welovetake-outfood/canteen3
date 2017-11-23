@@ -13,7 +13,10 @@ import com.example1.mycanteen.R.drawable;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +31,8 @@ import android.widget.TextView;
 public class Menudetail extends Activity {
   Dish dish;
   String picturename;
+  int position;
+  private Getimage g=new Getimage();
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -36,7 +41,7 @@ public class Menudetail extends Activity {
     TextView text2=(TextView) findViewById(R.id.menudetailtextView2);
     TextView text3=(TextView) findViewById(R.id.menudetailtextView3);
     TextView text4=(TextView) findViewById(R.id.menudetailtextView4);
-    ImageView ima=(ImageView) findViewById(R.id.menudetailimageView1);
+    final ImageView ima=(ImageView) findViewById(R.id.menudetailimageView1);
     final RatingBar star=(RatingBar) findViewById(R.id.menudetailratingBar1);
     final EditText comment=(EditText) findViewById(R.id.menudetaileditText);
     Button commitcomment=(Button) findViewById(R.id.menudetailbutton1);
@@ -47,7 +52,7 @@ public class Menudetail extends Activity {
     text2.append(Integer.toString(dish.getDishprice()));
     text3.append((dish.getDishscore())+"");
     text4.append(dish.getDishintrodiction());
-    Class<drawable> drawable  =  R.drawable.class;
+    /*Class<drawable> drawable  =  R.drawable.class;
     Field field = null;
     try {
         field = drawable.getField(dish.getPicturename());
@@ -55,7 +60,30 @@ public class Menudetail extends Activity {
         ima.setImageResource(r_id);
     } catch (Exception e) {
         Log.i("ERROR", "PICTURE NOT¡¡FOUND£¡");
-    }
+    }*/
+    final Handler handler = new Handler()
+    {
+        public void handleMessage(android.os.Message msg) 
+        {
+            //¸üÐÂUI
+            //ImageView imageView = (ImageView) findViewById(R.id.lv);
+            ima.setImageBitmap((Bitmap) msg.obj);
+        };
+    };  
+    final String path=HttpUtil.BASE_URL+"i/"+picturename+".JPG";
+    //final int positiontemp=position;
+    Thread thread = new Thread() {
+      @Override
+      public void run() {
+        Bitmap bm=g.get(path);
+        //g.blist[positiontemp]=bm;
+        Message msg = handler.obtainMessage();
+        msg.obj = bm;
+        handler.sendMessage(msg);
+      }
+    };
+    thread.start();
+    //ima.setImageBitmap(bmp);
     commitcomment.setOnClickListener(new View.OnClickListener() {   
       @Override
       public void onClick(View v) {

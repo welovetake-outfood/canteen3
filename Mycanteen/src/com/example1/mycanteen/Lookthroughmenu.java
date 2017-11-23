@@ -15,8 +15,11 @@ import com.example1.mycanteen.R.drawable;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +35,7 @@ public class Lookthroughmenu extends Activity {
   private HorizontalScrollViewAdapter mAdapter;  
   private ImageView mImg;
   private List<Dish> mdatas;
+  private Getimage g=new Getimage();
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     //Log.i("TestLog", "aaaaaaaaaaaaaaa");
@@ -48,15 +52,26 @@ public class Lookthroughmenu extends Activity {
     mdatas=getdish(canteen.getId());
     //Log.i("TestLog", "fffffffffffffmenu");
     mAdapter = new HorizontalScrollViewAdapter(this, mdatas);
-  //添加滚动回调  
+    mHorizontalScrollView.initDatas(mAdapter);
+    //Log.i("TestLog","hhhhhh"+mAdapter.map.toString());
+    //添加滚动回调  
     //Log.i("TestLog", "ccccccccccccc");
+    /*final Handler handler = new Handler()
+    {
+        public void handleMessage(android.os.Message msg) 
+        {
+            //更新UI
+            //ImageView imageView = (ImageView) findViewById(R.id.lv);
+            mImg.setImageBitmap((Bitmap) msg.obj);
+        };
+    }; */
     mHorizontalScrollView  
             .setCurrentImageChangeListener(new CurrentImageChangeListener()  
             {  
                 public void onCurrentImgChanged(int position,  
                         View viewIndicator)  
                 {  
-                  Class<drawable> drawable  =  R.drawable.class;
+                  /*Class<drawable> drawable  =  R.drawable.class;
                   Field field = null;
                   try {
                     field = drawable.getField(mdatas.get(position).getPicturename());
@@ -66,7 +81,21 @@ public class Lookthroughmenu extends Activity {
                               .parseColor("#AA024DA4"));  
                 } catch (Exception e) {
                     Log.i("ERROR", "PICTURE NOT　FOUND！");
-                }
+                }*/
+                  /*final String path=HttpUtil.BASE_URL+"i/"+mdatas.get(position).getPicturename()+".JPG";
+                  Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                      Bitmap bm=g.get(path);
+                      Message msg = handler.obtainMessage();
+                      msg.obj = bm;
+                      handler.sendMessage(msg);
+                    }
+                  };
+                  thread.start();*/
+                  mImg.setImageBitmap((Bitmap) mAdapter.map.get(position));
+                  viewIndicator.setBackgroundColor(Color  
+                      .parseColor("#AA024DA4"));  
                 }  
             });  
     //添加点击回调  
@@ -77,7 +106,7 @@ public class Lookthroughmenu extends Activity {
         {  
           final int ptemp=position;
             //mImg.setImageResource(mdatas.get(position));
-          Class<drawable> drawable  =  R.drawable.class;
+          /*Class<drawable> drawable  =  R.drawable.class;
           Field field = null;
           try {
             field = drawable.getField(mdatas.get(position).getPicturename());
@@ -96,11 +125,39 @@ public class Lookthroughmenu extends Activity {
             view.setBackgroundColor(Color.parseColor("#AA024DA4"));  
         } catch (Exception e) {
             Log.i("ERROR", "PICTURE NOT　FOUND！");
-        }
+        }*/
+          /*final String path=HttpUtil.BASE_URL+"i/"+mdatas.get(position).getPicturename()+".JPG";
+          Thread thread = new Thread() {
+            @Override
+            public void run() {
+              Bitmap bm=g.get(path);
+              Message msg = handler.obtainMessage();
+              msg.obj = bm;
+              handler.sendMessage(msg);
+            }
+          };
+          thread.start();*/
+          //final HashMap<Integer , Bitmap> map=mAdapter.map;
+          final Bitmap b=(Bitmap) mAdapter.map.get(position);
+          mImg.setImageBitmap(b);
+          mImg.setOnClickListener(new OnClickListener() {
+            public void onClick(View v)
+            {
+              final Bundle data=new Bundle();
+              data.putSerializable("picturename", (mdatas.get(ptemp)).getPicturename());
+              //data.putInt("position", ptemp);
+              //data.putParcelable("bitmap", b);
+              Intent intent=new Intent(Lookthroughmenu.this,Menudetail.class);
+              intent.putExtras(data);
+              //intent.putExtra("map",map);
+              startActivity(intent);
+            }
+          });
+          view.setBackgroundColor(Color.parseColor("#AA024DA4"));  
           }  
-    });  
+    }); 
     //设置适配器  
-    mHorizontalScrollView.initDatas(mAdapter);
+    //mHorizontalScrollView.initDatas(mAdapter);
   }
   
   private List<Dish> getdish(int canteenid){

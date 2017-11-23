@@ -26,11 +26,11 @@ public class HttpUtil {
     FutureTask<String> task=new FutureTask<String>(
         new Callable<String>() {
           public String call() throws Exception{
-            Log.i("TestLog", url);
+            //Log.i("TestLog", url);
             HttpGet get=new HttpGet(url);
-            Log.i("TestLog", "in line 31");
+            //Log.i("TestLog", "in line 31");
             HttpResponse httpResponse=httpClient.execute(get);
-            Log.i("TestLog", "in line 33");
+            //Log.i("TestLog", "in line 33");
             if (httpResponse.getStatusLine().getStatusCode()==200) {
               String result=EntityUtils.toString(httpResponse.getEntity());
               return result;
