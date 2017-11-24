@@ -13,5 +13,111 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    
+    <TextView
+        android:id="@+id/birthdaybooktextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/birthdaybooktextview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/birthdaybookbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/birthdaybooktextView1"
+        android:layout_alignBottom="@+id/birthdaybooktextView1"
+        android:layout_alignParentRight="true"
+        android:text="日历" />
+
+    <TextView
+        android:id="@+id/birthdaybooktextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/birthdaybooktextView1"
+        android:layout_alignBottom="@+id/birthdaybooktextView1"
+        android:layout_alignLeft="@+id/birthdaybooktextview"
+        android:text="选择日期："
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/birthdaybooktextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/birthdaybookGroup"
+        android:text="选择餐次："
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/birthdaybooktextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/birthdaybookGroup"
+        android:layout_marginTop="17dp"
+        android:text="人数："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/birthdaybookeditText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/birthdaybooktextView4"
+        android:layout_alignBottom="@+id/birthdaybooktextView4"
+        android:layout_centerHorizontal="true"
+        android:ems="5"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/birthdaybookbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/birthdaybooktextView4"
+        android:layout_below="@+id/birthdaybookeditText1"
+        android:layout_marginTop="66dp"
+        android:text="提交申请" />
+
+    <TextView
+        android:id="@+id/birthdaybooktextView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/birthdaybooktextView4"
+        android:layout_below="@+id/birthdaybookeditText1"
+        android:maxLength="25"
+        android:layout_marginTop="33dp"
+        android:maxLines="1"
+        android:text="" />
+
+    <RadioGroup
+        android:id="@+id/birthdaybookGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/birthdaybooktextView1"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/birthdaybooktextView3"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/birthdaybookradioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="中午"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/birthdaybookradioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="晚上"
+            android:textSize="20sp" />
+    </RadioGroup>
 
 </RelativeLayout>

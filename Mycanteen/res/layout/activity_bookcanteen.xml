@@ -14,5 +14,110 @@
         android:layout_height="wrap_content"
         android:text="book" />
 
+    <TextView
+        android:id="@+id/bookcanteentextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookcanteentextview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bookcanteenbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bookcanteentextView1"
+        android:layout_alignBottom="@+id/bookcanteentextView1"
+        android:layout_alignParentRight="true"
+        android:text="日历" />
+
+    <TextView
+        android:id="@+id/bookcanteentextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bookcanteentextView1"
+        android:layout_alignBottom="@+id/bookcanteentextView1"
+        android:layout_alignLeft="@+id/bookcanteentextview"
+        android:text="选择日期："
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/bookcanteentextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/bookcanteenGroup"
+        android:text="选择餐次："
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/bookcanteenGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookcanteentextView1"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/bookcanteentextView3"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/bookcanteenradioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="中午"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/bookcanteenradioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="晚上"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/bookcanteentextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookcanteenGroup"
+        android:layout_marginTop="17dp"
+        android:text="人数："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/bookcanteeneditText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bookcanteentextView4"
+        android:layout_alignBottom="@+id/bookcanteentextView4"
+        android:layout_centerHorizontal="true"
+        android:ems="5"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/bookcanteenbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bookcanteentextView4"
+        android:layout_below="@+id/bookcanteeneditText1"
+        android:layout_marginTop="66dp"
+        android:text="提交申请" />
+
+    <TextView
+        android:id="@+id/bookcanteentextView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/bookcanteentextView4"
+        android:layout_below="@+id/bookcanteeneditText1"
+        android:maxLength="25"
+        android:layout_marginTop="33dp"
+        android:maxLines="1"
+        android:text="" />
 
 </RelativeLayout>
