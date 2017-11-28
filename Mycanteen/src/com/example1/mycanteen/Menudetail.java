@@ -21,9 +21,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 //import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
@@ -33,6 +35,7 @@ public class Menudetail extends Activity {
   String picturename;
   int position;
   private Getimage g=new Getimage();
+  private ListView listview;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -45,6 +48,7 @@ public class Menudetail extends Activity {
     final RatingBar star=(RatingBar) findViewById(R.id.menudetailratingBar1);
     final EditText comment=(EditText) findViewById(R.id.menudetaileditText);
     Button commitcomment=(Button) findViewById(R.id.menudetailbutton1);
+    listview=(ListView)findViewById(R.id.MyListView);
     Intent intent=getIntent();
     picturename=(String)intent.getSerializableExtra("picturename");
     dish=getadish(picturename);
@@ -105,8 +109,19 @@ public class Menudetail extends Activity {
         }
       }
   });
-    
+    listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
   }
+  
+  private List<String> getData(){
+    
+    List<String> data = new ArrayList<String>();
+    data.add("测试数据1");
+    data.add("测试数据2");
+    data.add("测试数据3");
+    data.add("测试数据4");
+    data.add("测试数据5");
+    return data;
+}
  
   private Dish getadish(String picturename){
     Dish a=new Dish();

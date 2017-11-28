@@ -113,4 +113,18 @@
             android:textSize="8pt" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="-12dp"
+        android:layout_y="300dp"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/MyListView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp" >
+        </ListView>
+    </LinearLayout>
+
 </AbsoluteLayout>
