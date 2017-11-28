@@ -398,4 +398,36 @@ public class Dao {
     return rflag;
   }
   
+  public List<String> getdishcomment(String dishname){
+    List<String> commentlist=new ArrayList<String>();
+    String sql="select * from dishcomment where dishname=\""+dishname+"\"";
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      ResultSet rs=ps.executeQuery();
+      while (rs.next())
+      {
+        String comment=rs.getString("comment");
+        String comment2="{\"comment\":\""+comment+"\"}";
+        /*Dish dish=new Dish();
+        dish.setCanteenid(Integer.valueOf(canteenid));
+        dish.setDishintrodiction(rs.getString("dishintroduction"));
+        dish.setDishprice(rs.getInt("dishprice"));
+        dish.setDishscore(rs.getFloat("dishscore"));
+        dish.setPicturename(rs.getString("picturename"));
+        dish.setCommentpeople(rs.getInt("commentpeople"));
+        dish.setDishname(rs.getString("dishname"));*/
+        commentlist.add(comment2);
+      }
+      ps.close();
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return commentlist;
+  }
+  
 }

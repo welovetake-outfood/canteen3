@@ -115,13 +115,40 @@ public class Menudetail extends Activity {
   private List<String> getData(){
     
     List<String> data = new ArrayList<String>();
-    data.add("测试数据1");
+    /*data.add("测试数据1");
     data.add("测试数据2");
     data.add("测试数据3");
     data.add("测试数据4");
-    data.add("测试数据5");
+    data.add("测试数据5");*/
+    //return data;
+    JSONArray o;
+    try {
+      o=getcommentjson(picturename);
+      for (int i=0;i<o.length();i++)
+      {
+        JSONObject jsonobject=o.getJSONObject(i);
+        String a=jsonobject.getString("comment");
+        //Log.i("TestLog", a+"is comment");
+        //String a=o.getJSONObject(i).toString();
+        //data.add(jsonobject.getString("comment"));
+        data.add(a);
+        Log.i("TestLog", a+"is comment");
+      }
+    }    
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+    Log.i("TestLog", data.toString());
     return data;
 }
+  
+  private JSONArray getcommentjson(String picturename) throws Exception{
+    Map<String,String> map=new HashMap<String,String>();
+    map.put("dishname", picturename);
+    String url=HttpUtil.BASE_URL+"GetdishcommentServlet";//!!!!!!!!!
+    JSONArray o=new JSONArray(HttpUtil.postRequest(url,map));
+    return o;
+  }
  
   private Dish getadish(String picturename){
     Dish a=new Dish();
