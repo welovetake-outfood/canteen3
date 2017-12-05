@@ -1,6 +1,10 @@
 package com.example1.mycanteen;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -26,7 +30,7 @@ public class Birthdaybook extends Activity {
   TextView showtime,tip;
   Button button,buttonsignup;
   RadioGroup rg;
-  EditText peoplenumber;
+  EditText phone,peoplename;
   private int lunchordinner;
   public int getLunchordinner() {
     return lunchordinner;
@@ -46,9 +50,13 @@ public class Birthdaybook extends Activity {
     canteenname.setText("生日预定");
     getDate();
     tip=(TextView) findViewById(R.id.birthdaybooktextView5);
-    //tip.setText("");
     showtime=(TextView) findViewById(R.id.birthdaybooktextView1);
     button=(Button) findViewById(R.id.birthdaybookbutton1);
+    //peoplenumber=(EditText) findViewById(R.id.birthdaybookeditText1);
+    phone=(EditText) findViewById(R.id.birthdaybookeditText2);
+    peoplename=(EditText) findViewById(R.id.birthdaybookeditText3);
+    buttonsignup=(Button) findViewById(R.id.birthdaybookbutton2);
+    rg = (RadioGroup) findViewById(R.id.birthdaybookGroup);
     button.setOnClickListener(new View.OnClickListener() {   
       @Override
       public void onClick(View v) {
@@ -65,52 +73,80 @@ public class Birthdaybook extends Activity {
       dialog.show();  
       }
   });
-    rg = (RadioGroup) findViewById(R.id.birthdaybookGroup);
+    
     setLunchordinner(1);
     choice();
-    peoplenumber=(EditText) findViewById(R.id.birthdaybookeditText1);
-    buttonsignup=(Button) findViewById(R.id.birthdaybookbutton2);
+    
     buttonsignup.setOnClickListener(new View.OnClickListener() {   
       @Override
       public void onClick(View v) {
           if (validate()) {
-            final Bundle data=new Bundle();
+            if (birthdaybookPro()>0) {
+              final Bundle data=new Bundle();
             data.putSerializable("canteen", canteen);
             Intent intent=new Intent(Birthdaybook.this,Birthdaybook.class);
             intent.putExtras(data);
             startActivity(intent);
             finish();
-            /*if (registerPro()>0) {
-              Intent intent=new Intent(WorkerRegister.this,MainActivity.class);
-              startActivity(intent);
-              finish();
             }
             else {
-              text.setText("提示：注册失败");
-            }*/
+              tip.setText("提示：提交失败");
+            }
           }            
       }
   });
   }
   
+  private int birthdaybookPro() {
+    String phonestring=phone.getText().toString();
+    String namestring=peoplename.getText().toString();
+    JSONObject jsonObj;
+    try {
+      //Log.i("TestLog", "bbbbbbbbbbloginpro");
+      jsonObj=book(phonestring,namestring);
+      if (jsonObj.getInt("rflag")>0) {
+        return 1;
+      }
+    }
+    catch (Exception e) {
+      tip.setText("提示：服务器异常，请稍后再使");
+      e.printStackTrace();
+    }
+    return 0;
+  }
   
+  private JSONObject book(String phonestring,String namestring) throws Exception{
+    Map<String,String> map=new HashMap<String,String>();
+    map.put("canteenid", String.valueOf(canteen.id));
+    map.put("phone", phonestring);
+    map.put("name", namestring);
+    map.put("yearbook", String.valueOf(yearbook));
+    map.put("monthbook", String.valueOf(monthbook));
+    map.put("daybook", String.valueOf(daybook));
+    map.put("lunchordinner", String.valueOf(lunchordinner));
+    String url=HttpUtil.BASE_URL+"BirthdaybookServlet";//???????
+    JSONObject o=new JSONObject(HttpUtil.postRequest(url,map));
+    //Log.i("TestLog", url);
+    //o=JSONObject.fromObject(HttpUtil.getRequest(url));
+    return o;
+  }
   
   private boolean validate() {
     if (yearbook==0) {
       tip.setText("提示:请选择日期");
       return false;
     }
-    String pnstring=peoplenumber.getText().toString();
-    if (pnstring.trim()== null || pnstring.trim().length() == 0) {
-      tip.setText("提示:请输入人数");
+    //String pnstring=peoplenumber.getText().toString();
+    String phonestring=phone.getText().toString();
+    String namestring=peoplename.getText().toString();
+    if (phonestring.trim()== null || phonestring.trim().length() == 0) {
+      tip.setText("提示:请输入联系电话");
       return false;
     }
-    int pn=Integer.parseInt(pnstring);
-    //String pwd=password.getText().toString().trim();
-    if (pn>25) {
-      tip.setText("提示:数量过多");
+    if (namestring.trim()== null || namestring.trim().length() == 0) {
+      tip.setText("提示:请输入姓名");
       return false;
-  }
+    }
     if (yearbook<year) {
       tip.setText("提示:该时间段不可预约");
       return false;
@@ -152,6 +188,7 @@ public class Birthdaybook extends Activity {
       }
     });
   }
+  
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.

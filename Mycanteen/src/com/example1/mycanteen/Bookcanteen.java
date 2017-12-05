@@ -1,6 +1,10 @@
 package com.example1.mycanteen;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -26,7 +30,7 @@ public class Bookcanteen extends Activity {
   TextView showtime,tip;
   Button button,buttonsignup;
   RadioGroup rg;
-  EditText peoplenumber;
+  EditText peoplenumber,phone,peoplename;
   private int lunchordinner;
   public int getLunchordinner() {
     return lunchordinner;
@@ -48,6 +52,11 @@ public class Bookcanteen extends Activity {
     tip=(TextView) findViewById(R.id.bookcanteentextView5);
     showtime=(TextView) findViewById(R.id.bookcanteentextView1);
     button=(Button) findViewById(R.id.bookcanteenbutton1);
+    peoplenumber=(EditText) findViewById(R.id.bookcanteeneditText1);
+    phone=(EditText) findViewById(R.id.bookcanteeneditText2);
+    peoplename=(EditText) findViewById(R.id.bookcanteeneditText3);
+    buttonsignup=(Button) findViewById(R.id.bookcanteenbutton2);
+    rg = (RadioGroup) findViewById(R.id.bookcanteenGroup);
     button.setOnClickListener(new View.OnClickListener() {   
       @Override
       public void onClick(View v) {
@@ -64,44 +73,82 @@ public class Bookcanteen extends Activity {
       dialog.show();  
       }
   });
-    rg = (RadioGroup) findViewById(R.id.bookcanteenGroup);
+
     setLunchordinner(1);
     choice();
-    peoplenumber=(EditText) findViewById(R.id.bookcanteeneditText1);
-    buttonsignup=(Button) findViewById(R.id.bookcanteenbutton2);
     buttonsignup.setOnClickListener(new View.OnClickListener() {   
       @Override
       public void onClick(View v) {
           if (validate()) {
-            final Bundle data=new Bundle();
+            if (bookcanteenPro()>0) {
+              final Bundle data=new Bundle();
             data.putSerializable("canteen", canteen);
             Intent intent=new Intent(Bookcanteen.this,Bookcanteen.class);
             intent.putExtras(data);
             startActivity(intent);
             finish();
-            /*if (registerPro()>0) {
-              Intent intent=new Intent(WorkerRegister.this,MainActivity.class);
-              startActivity(intent);
-              finish();
             }
             else {
-              text.setText("提示：注册失败");
-            }*/
+              tip.setText("提示：注册失败");
+            }
           }            
       }
   });
+   
   }
   
+  private int bookcanteenPro() {
+    String pnstring=peoplenumber.getText().toString();
+    String phonestring=phone.getText().toString();
+    String namestring=peoplename.getText().toString();
+    JSONObject jsonObj;
+    try {
+      //Log.i("TestLog", "bbbbbbbbbbloginpro");
+      jsonObj=book(pnstring,phonestring,namestring);
+      if (jsonObj.getInt("rflag")>0) {
+        return 1;
+      }
+    }
+    catch (Exception e) {
+      tip.setText("提示：服务器异常，请稍后再使");
+      e.printStackTrace();
+    }
+    return 0;
+  }
   
-  
+  private JSONObject book(String pnstring,String phonestring,String namestring) throws Exception{
+    Map<String,String> map=new HashMap<String,String>();
+    map.put("canteenid", String.valueOf(canteen.id));
+    map.put("peoplenumber", pnstring);
+    map.put("phone", phonestring);
+    map.put("name", namestring);
+    map.put("yearbook", String.valueOf(yearbook));
+    map.put("monthbook", String.valueOf(monthbook));
+    map.put("daybook", String.valueOf(daybook));
+    map.put("lunchordinner", String.valueOf(lunchordinner));
+    String url=HttpUtil.BASE_URL+"CanteenbookServlet";
+    JSONObject o=new JSONObject(HttpUtil.postRequest(url,map));
+    return o;
+  }
+   
   private boolean validate() {
     if (yearbook==0) {
       tip.setText("提示:请选择日期");
       return false;
     }
     String pnstring=peoplenumber.getText().toString();
+    String phonestring=peoplenumber.getText().toString();
+    String namestring=peoplenumber.getText().toString();
     if (pnstring.trim()== null || pnstring.trim().length() == 0) {
       tip.setText("提示:请输入人数");
+      return false;
+    }
+    if (phonestring.trim()== null || phonestring.trim().length() == 0) {
+      tip.setText("提示:请输入联系电话");
+      return false;
+    }
+    if (namestring.trim()== null || namestring.trim().length() == 0) {
+      tip.setText("提示:请输入姓名");
       return false;
     }
     int pn=Integer.parseInt(pnstring);
@@ -151,8 +198,7 @@ public class Bookcanteen extends Activity {
       }
     });
   }
-  
-  
+   
   /*public void onClick(View view) {  
       switch (view.getId()) {  
       //case R.id.bookcanteentextView1:  

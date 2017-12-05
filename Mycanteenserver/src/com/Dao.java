@@ -430,4 +430,49 @@ public class Dao {
     return commentlist;
   }
   
+  public int addbirthdaybook(String canteenid,String year,String month,
+      String day,String lunchordinner,String name,String phonenumber){
+    int rflag=0;
+    String sql="insert into birthdaybook values("+year+","+month+
+        ","+day+","+lunchordinner+",\""+name+"\",\""+phonenumber+"\","+canteenid+")";
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      rflag=ps.executeUpdate();
+      ps.close();
+      System.out.println("rflag="+rflag);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return rflag;
+  }
+  
+  public int addcanteenbook(String canteenid,String year,String month,
+      String day,String lunchordinner,String peoplenumber,String name,
+      String phonenumber){
+    int rflag=0;
+    String sql="insert into canteenbook values("+year+","+month+
+        ","+day+","+lunchordinner+","+peoplenumber+",\""+name+"\",\""
+        +phonenumber+"\","+canteenid+")";
+    System.out.println(sql);
+    PreparedStatement ps=null;
+    try
+    {
+      ps=DbPool.getConn().prepareStatement(sql);
+      rflag=ps.executeUpdate();
+      ps.close();
+      System.out.println("rflag="+rflag);
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return rflag;
+  }
+  
 }

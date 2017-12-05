@@ -104,20 +104,60 @@
         android:id="@+id/bookcanteenbutton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/bookcanteenbutton1"
+        android:layout_marginBottom="14dp"
+        android:text="提交申请" />
+
+    <EditText
+        android:id="@+id/bookcanteeneditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bookcanteentextView6"
+        android:layout_alignBottom="@+id/bookcanteentextView6"
+        android:layout_toRightOf="@+id/bookcanteentextView3"
+        android:ems="8"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/bookcanteentextView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/bookcanteentextView4"
         android:layout_below="@+id/bookcanteeneditText1"
-        android:layout_marginTop="66dp"
-        android:text="提交申请" />
+        android:layout_marginTop="24dp"
+        android:text="联系电话:"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/bookcanteentextView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/bookcanteentextView4"
-        android:layout_below="@+id/bookcanteeneditText1"
-        android:maxLength="25"
-        android:layout_marginTop="33dp"
+        android:layout_above="@+id/bookcanteenbutton2"
+        android:layout_alignLeft="@+id/bookcanteentextView6"
+        android:layout_marginBottom="24dp"
+        android:maxLength="40"
         android:maxLines="1"
         android:text="" />
+
+    <TextView
+        android:id="@+id/bookcanteentextView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bookcanteentextView5"
+        android:layout_below="@+id/bookcanteeneditText2"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        android:text="姓名:" />
+
+    <EditText
+        android:id="@+id/bookcanteeneditText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bookcanteentextView7"
+        android:layout_alignBottom="@+id/bookcanteentextView7"
+        android:layout_toRightOf="@+id/bookcanteentextView6"
+        android:ems="8"
+        android:inputType="textPersonName" />
 
 </RelativeLayout>
