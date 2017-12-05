@@ -475,4 +475,36 @@ public class Dao {
     return rflag;
   }
   
+  public List<String> getcanteencomment(String canteenid){
+    List<String> messagelist=new ArrayList<String>();
+    String sql="select * from canteenmessage where canteenid="+canteenid;
+    PreparedStatement ps=null;
+    try
+    {
+      //DbPool.createConn();
+      ps=DbPool.getConn().prepareStatement(sql);
+      ResultSet rs=ps.executeQuery();
+      while (rs.next())
+      {
+        String message=rs.getString("message");
+        String message2="{\"message\":\""+message+"\"}";
+        /*Dish dish=new Dish();
+        dish.setCanteenid(Integer.valueOf(canteenid));
+        dish.setDishintrodiction(rs.getString("dishintroduction"));
+        dish.setDishprice(rs.getInt("dishprice"));
+        dish.setDishscore(rs.getFloat("dishscore"));
+        dish.setPicturename(rs.getString("picturename"));
+        dish.setCommentpeople(rs.getInt("commentpeople"));
+        dish.setDishname(rs.getString("dishname"));*/
+        messagelist.add(message2);
+      }
+      ps.close();
+    }
+    catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+    return messagelist;
+  }
+  
 }

@@ -1,18 +1,24 @@
 package com.example1.mycanteen;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class Leavemessage extends Activity {
@@ -20,6 +26,7 @@ public class Leavemessage extends Activity {
   private Button button;
   private EditText message;
   private TextView tip;
+  private ListView listview;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -28,6 +35,8 @@ public class Leavemessage extends Activity {
     button = (Button) findViewById(R.id.leavemessagebutton1);
     message = (EditText) findViewById(R.id.leavemessageeditText1);
     tip=(TextView) findViewById(R.id.leavemessagetextView1);
+    //listview=(ListView) findViewById(R.id.leavemessageMyListView);
+    listview=(ListView) findViewById(R.id.leavemessageListView);
     tip.setText("提示：");
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
@@ -52,7 +61,48 @@ public class Leavemessage extends Activity {
           }
       }
   });
+    
+    listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
+    
   }
+  
+private List<String> getData(){
+    
+    List<String> data = new ArrayList<String>();
+    data.add("测试数据1");
+    data.add("测试数据2");
+    data.add("测试数据3");
+    data.add("测试数据4");
+    data.add("测试数据5");
+    //return data;
+    JSONArray o;
+    try {
+      o=getcommentjson(canteen.id);
+      for (int i=0;i<o.length();i++)
+      {
+        JSONObject jsonobject=o.getJSONObject(i);
+        String a=jsonobject.getString("message");
+        //Log.i("TestLog", a+"is comment");
+        //String a=o.getJSONObject(i).toString();
+        //data.add(jsonobject.getString("comment"));
+        data.add(a);
+        Log.i("TestLog", a+"is message");
+      }
+    }    
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+    Log.i("TestLog", data.toString());
+    return data;
+}
+
+private JSONArray getcommentjson(int canteenid) throws Exception{
+  Map<String,String> map=new HashMap<String,String>();
+  map.put("canteenid", String.valueOf(canteenid));
+  String url=HttpUtil.BASE_URL+"GetcanteenmessageServlet";//!!!!!!!!!
+  JSONArray o=new JSONArray(HttpUtil.postRequest(url,map));
+  return o;
+}
   
   private boolean givemessage() {
     String msg=message.getText().toString();
