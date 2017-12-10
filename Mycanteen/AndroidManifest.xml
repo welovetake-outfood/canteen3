@@ -92,6 +92,14 @@
             android:name=".Updatemenu"
             android:label="@string/title_activity_updatemenu" >
         </activity>
+        <activity
+            android:name=".Updatethemenu"
+            android:label="@string/title_activity_updatethemenu" >
+        </activity>
+        <activity
+            android:name=".Update"
+            android:label="@string/title_activity_update" >
+        </activity>
     </application>
 
 </manifest>

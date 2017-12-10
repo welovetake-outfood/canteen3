@@ -664,5 +664,26 @@ public int changedesc(String canteenid,String desc) {
   return rflag;
 } 
 
+public int updatedish(String dishprice,String dishintro,String dishname,String picturename) {
+  int rflag=0;
+  String sql="update menu set dishprice="+dishprice+",dishname=\""+dishname+"\",dishintroduction=\""
+  +dishintro+"\" where picturename=\""+picturename+"\"";
+  System.out.println(sql);
+  PreparedStatement ps=null;
+  try
+  {
+    //DbPool.createConn();
+    ps=DbPool.getConn().prepareStatement(sql);
+    rflag=ps.executeUpdate();
+    ps.close();
+    System.out.println("rflag="+rflag);
+  }
+  catch(Exception e)
+  {
+    e.printStackTrace();
+  }
+  return rflag;
+} 
+
 
 }

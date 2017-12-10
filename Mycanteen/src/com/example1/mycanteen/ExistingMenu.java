@@ -76,7 +76,7 @@ public class ExistingMenu extends Activity {
           data.putSerializable("picturename", (dishes.get(arg2)).getPicturename());
           //data.putInt("position", ptemp);
           //data.putParcelable("bitmap", b);
-          Intent intent=new Intent(ExistingMenu.this,Updatemenu.class);
+          Intent intent=new Intent(ExistingMenu.this,Update.class);
           intent.putExtras(data);
           //intent.putExtra("map",map);
           startActivity(intent);

@@ -25,7 +25,7 @@ public class LoginSuccess extends Activity {
     buttonup1.setOnClickListener(new View.OnClickListener() {   
         @Override
         public void onClick(View v) {
-            Intent intent=new Intent(LoginSuccess.this,AddMenu.class);
+            Intent intent=new Intent(LoginSuccess.this,ExistingMenu.class);
             intent.putExtras(data);
             startActivity(intent);
         }
