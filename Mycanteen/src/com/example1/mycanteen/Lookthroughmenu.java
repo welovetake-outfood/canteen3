@@ -176,7 +176,7 @@ public class Lookthroughmenu extends Activity {
         a.setDishscore((float)jsonobject.getDouble("dishscore"));
         a.setPicturename(jsonobject.getString("picturename"));
         a.setCommentpeople(jsonobject.getInt("commentpeople"));
-        a.setDishname(jsonobject.getString("dishname"));;
+        a.setDishname(jsonobject.getString("dishname"));
         d.add(a);
       }
       //d= (List<Dish>)JSONArray.toCollection(o, Dish.class); //!!!!!!!!!!!!!!

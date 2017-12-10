@@ -69,11 +69,11 @@ public class Leavemessage extends Activity {
 private List<String> getData(){
     
     List<String> data = new ArrayList<String>();
-    data.add("测试数据1");
+    /*data.add("测试数据1");
     data.add("测试数据2");
     data.add("测试数据3");
     data.add("测试数据4");
-    data.add("测试数据5");
+    data.add("测试数据5");*/
     //return data;
     JSONArray o;
     try {

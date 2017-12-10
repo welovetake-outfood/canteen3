@@ -79,7 +79,7 @@
         </activity>
         <activity android:name=".ReleaseAnnouncement" >
         </activity>
-        <activity android:name=".ViewMassage" >
+        <activity android:name=".ViewMessage" >
         </activity>
         <activity android:name=".CheckBirthday" >
         </activity>

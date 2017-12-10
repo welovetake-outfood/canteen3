@@ -507,4 +507,139 @@ public class Dao {
     return messagelist;
   }
   
+  public List<String> getbirthday(String canteenid){
+      List<String> birthdaylist=new ArrayList<String>();
+      String sql="select * from birthdaybook where canteenid="+canteenid;
+      PreparedStatement ps=null;
+      try
+      {
+        //DbPool.createConn();
+        ps=DbPool.getConn().prepareStatement(sql);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next())
+        {
+          String name=rs.getString("name");
+          String name2="{\"message\":\""+name+"\"}";
+          birthdaylist.add(name2);
+        }
+        ps.close();
+      }
+      catch(Exception e)
+      {
+        e.printStackTrace();
+      }
+      return birthdaylist;
+  }
+  
+  public List<Birthdaybookmsg> getbirthdaymessage(String canteenid){
+      List<Birthdaybookmsg> birthdaylist=new ArrayList<Birthdaybookmsg>();
+      String sql="select * from birthdaybook where canteenid="+canteenid;
+      PreparedStatement ps=null;
+      try
+      {
+        //DbPool.createConn();
+        ps=DbPool.getConn().prepareStatement(sql);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next())
+        {
+          Birthdaybookmsg birth=new Birthdaybookmsg();
+          birth.setCanteenid(Integer.valueOf(canteenid));
+          birth.setYear(rs.getInt("year"));
+          birth.setMonth(rs.getInt("month"));
+          birth.setDay(rs.getInt("day"));
+          birth.setLunchordinner(rs.getInt("lunchordinner"));
+          birth.setPeoplename(rs.getString("name"));
+          birth.setPhonenumber(rs.getString("phonenumber"));
+          birthdaylist.add(birth);
+        }
+        ps.close();
+      }
+      catch(Exception e)
+      {
+        e.printStackTrace();
+      }
+      return birthdaylist;
+    }
+  
+  public List<String> getcanteenbook(String canteenid){
+      List<String> canteenbooklist=new ArrayList<String>();
+      String sql="select * from canteenbook where canteenid="+canteenid;
+      PreparedStatement ps=null;
+      try
+      {
+        //DbPool.createConn();
+        ps=DbPool.getConn().prepareStatement(sql);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next())
+        {
+          String name=rs.getString("name");
+          String name2="{\"message\":\""+name+"\"}";
+          canteenbooklist.add(name2);
+        }
+        ps.close();
+      }
+      catch(Exception e)
+      {
+        e.printStackTrace();
+      }
+      return canteenbooklist;
+  }
+  
+  public List<Canteenbookmsg> getcanteenbookmessage(String canteenid){
+      List<Canteenbookmsg> canteenbooklist=new ArrayList<Canteenbookmsg>();
+      String sql="select * from canteenbook where canteenid="+canteenid;
+      PreparedStatement ps=null;
+      try
+      {
+        //DbPool.createConn();
+        ps=DbPool.getConn().prepareStatement(sql);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next())
+        {
+          Canteenbookmsg canteenbook=new Canteenbookmsg();
+          canteenbook.setCanteenid(Integer.valueOf(canteenid));
+          canteenbook.setYear(rs.getInt("year"));
+          canteenbook.setMonth(rs.getInt("month"));
+          canteenbook.setDay(rs.getInt("day"));
+          canteenbook.setLunchordinner(rs.getInt("lunchordinner"));
+          canteenbook.setPeoplename(rs.getString("name"));
+          canteenbook.setPhonenumber(rs.getString("phonenumber"));
+          canteenbook.setPeoplenumber(rs.getString("peoplenumber"));
+          canteenbooklist.add(canteenbook);
+        }
+        ps.close();
+      }
+      catch(Exception e)
+      {
+        e.printStackTrace();
+      }
+      return canteenbooklist;
+    }
+  
+  public void updatecanteenbookmessage(String name){
+      String sql="delete from canteenbook where name=\"" + name + "\"";
+      PreparedStatement ps=null;
+      try {
+        ps=DbPool.getConn().prepareStatement(sql);
+        ps.executeUpdate(sql);//÷¥––sql”Ôæ‰
+        ps.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    }
+  
+  public void updatebirthdaybookmessage(String name){
+      String sql="delete from birthdaybook where name=\"" + name + "\"";
+      PreparedStatement ps=null;
+      try {
+        ps=DbPool.getConn().prepareStatement(sql);
+        ps.executeUpdate(sql);//÷¥––sql”Ôæ‰
+        ps.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    }
+
 }

@@ -17,11 +17,16 @@ public class LoginSuccess extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_loginsuccess);
+    Intent intent=getIntent();
+    canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
+    final Bundle data=new Bundle();
+    data.putSerializable("canteen", canteen);
     ImageButton buttonup1 = (ImageButton) findViewById(R.id.WorkerFuntion1);
     buttonup1.setOnClickListener(new View.OnClickListener() {   
         @Override
         public void onClick(View v) {
             Intent intent=new Intent(LoginSuccess.this,AddMenu.class);
+            intent.putExtras(data);
             startActivity(intent);
         }
     });
@@ -30,6 +35,7 @@ public class LoginSuccess extends Activity {
         @Override
         public void onClick(View v) {
             Intent intent=new Intent(LoginSuccess.this,ReleaseAnnouncement.class);
+            intent.putExtras(data);
             startActivity(intent);
         }
     });
@@ -38,6 +44,7 @@ public class LoginSuccess extends Activity {
         @Override
         public void onClick(View v) {
             Intent intent=new Intent(LoginSuccess.this,CheckBirthday.class);
+            intent.putExtras(data);
             startActivity(intent);
         }
     });
@@ -46,6 +53,7 @@ public class LoginSuccess extends Activity {
         @Override
         public void onClick(View v) {
             Intent intent=new Intent(LoginSuccess.this,CheckAppointment.class);
+            intent.putExtras(data);
             startActivity(intent);
         }
     });
@@ -53,7 +61,8 @@ public class LoginSuccess extends Activity {
     buttonup5.setOnClickListener(new View.OnClickListener() {   
         @Override
         public void onClick(View v) {
-            Intent intent=new Intent(LoginSuccess.this,ViewMassage.class);
+            Intent intent=new Intent(LoginSuccess.this,ViewMessage.class);
+            intent.putExtras(data);
             startActivity(intent);
         }
     });
