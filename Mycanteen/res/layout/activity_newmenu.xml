@@ -5,42 +5,34 @@
     tools:context="com.example1.mycanteen.WorkerLogin" >
 
     <EditText
-        android:id="@+id/EnterName"
+        android:id="@+id/newmenuEnterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Password1"
-        android:layout_toRightOf="@+id/Name1"
+        android:layout_above="@+id/newmenuPassword1"
+        android:layout_toRightOf="@+id/newmenuName1"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/newmenueditText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Password1"
-        android:layout_alignLeft="@+id/EnterName"
+        android:layout_alignBottom="@+id/newmenuPassword1"
+        android:layout_alignLeft="@+id/newmenuEnterName"
         android:ems="10" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/newmenueditText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_alignBottom="@+id/newmenutextView2"
+        android:layout_toRightOf="@+id/newmenutextView2"
         android:ems="10" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignRight="@+id/editText2"
-        android:ems="8" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/newmenutextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -50,7 +42,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/newmenubutton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -59,64 +51,53 @@
         android:text="提交" />
 
     <TextView
-        android:id="@+id/Name1"
+        android:id="@+id/newmenuName1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/newmenutextView1"
         android:layout_marginLeft="29dp"
         android:layout_marginTop="39dp"
         android:text="名称："
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/Password1"
+        android:id="@+id/newmenuPassword1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Name1"
+        android:layout_below="@+id/newmenuName1"
         android:layout_marginTop="40dp"
-        android:layout_toLeftOf="@+id/editText1"
+        android:layout_toLeftOf="@+id/newmenueditText1"
         android:text="价格："
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/newmenutextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Password1"
-        android:layout_below="@+id/Password1"
+        android:layout_alignLeft="@+id/newmenuPassword1"
+        android:layout_below="@+id/newmenuPassword1"
         android:layout_marginTop="40dp"
         android:text="简介："
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/newmenutextView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="40dp"
-        android:text="营养成分："
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/editText3"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="18dp"
-        android:src="@drawable/add_launcher" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageButton1"
-        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignBottom="@+id/newmenuimageButton1"
+        android:layout_alignLeft="@+id/newmenutextView2"
         android:layout_marginBottom="18dp"
         android:text="添加图片："
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/newmenuimageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newmenubutton1"
+        android:layout_alignRight="@+id/newmenutextView1"
+        android:layout_marginBottom="22dp"
+        android:src="@drawable/add_launcher" />
 
 </RelativeLayout>

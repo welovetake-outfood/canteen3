@@ -11,6 +11,11 @@ public class Studentchoose extends Activity implements CanteenlistFragment.Callb
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_studentchoose);
+    Bundle arguments=new Bundle();
+    arguments.putInt(CanteenpageFragment.ITEM_ID, 1);
+    CanteenpageFragment fragment=new CanteenpageFragment();
+    fragment.setArguments(arguments);
+    getFragmentManager().beginTransaction().replace(R.id.canteenpage_container, fragment).commit();
   }
   
   public void onItemSelected(Integer id) {

@@ -52,3 +52,4 @@ public class Canteenbookmsg {
     this.peoplenumber = peoplenumber;
   }
 }
+

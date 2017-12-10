@@ -3,12 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    
     <TextView
         android:id="@+id/ReleaseAnnouncementtextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:text="ReleaseAnnouncement" />
+
+    <EditText
+        android:id="@+id/ReleaseAnnouncementeditText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ReleaseAnnouncementtextview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="12" />
+
+    <TextView
+        android:id="@+id/ReleaseAnnouncementtextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ReleaseAnnouncementeditText1"
+        android:layout_alignTop="@+id/ReleaseAnnouncementbutton1"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/ReleaseAnnouncementbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/ReleaseAnnouncementeditText1"
+        android:layout_below="@+id/ReleaseAnnouncementeditText1"
+        android:layout_marginTop="22dp"
+        android:text="Button" />
 
 </RelativeLayout>

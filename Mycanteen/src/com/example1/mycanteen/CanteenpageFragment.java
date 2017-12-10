@@ -1,5 +1,10 @@
 package com.example1.mycanteen;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONObject;
+
 //import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -32,7 +37,7 @@ public class CanteenpageFragment extends Fragment {
     View rootView=inflater.inflate(R.layout.fragment_canteenpage, container,false);
     if (canteen!=null) {
       ((TextView)rootView.findViewById(R.id.canteenname)).setText(canteen.name);
-      ((TextView)rootView.findViewById(R.id.canteendesc)).setText(canteen.notice);
+      ((TextView)rootView.findViewById(R.id.canteendesc)).setText(getdescPro());
       final Bundle data=new Bundle();
       data.putSerializable("canteen", canteen);
       //---------------------------------------------------------------
@@ -105,4 +110,35 @@ public class CanteenpageFragment extends Fragment {
     return rootView;
   }
 
+  private String getdescPro() {
+    int canteenid=canteen.id;
+    JSONObject jsonObj;
+    String desc="服务器异常，请稍后再使";
+    try {
+      //Log.i("TestLog", "bbbbbbbbbbloginpro");
+      jsonObj=query(canteenid);
+      desc=jsonObj.getString("canteendesc");
+      /*if (desc!="") {
+        return jsonObj.getString("canteenid");
+      }*/
+    }
+    catch (Exception e) {
+      //text.setText("提示：服务器异常，请稍后再使");
+      e.printStackTrace();
+    }
+    return desc;
+  }
+  private JSONObject query(int canteenid) throws Exception{
+    Map<String,String> map=new HashMap<String,String>();
+    map.put("canteenid", String.valueOf(canteenid));
+    //map.put("password", pwd);
+    //Log.i("TestLog", "cccccccccccc"+pwd);
+    String url=HttpUtil.BASE_URL+"GetdescServlet";
+    //String url="http://10.0.2.2:8080/Mycanteenserver/LoginServlet?userid=002&password=123";
+    JSONObject o=new JSONObject(HttpUtil.postRequest(url,map));
+    //Log.i("TestLog", url);
+    //o=JSONObject.fromObject(HttpUtil.getRequest(url));
+    return o;
+  }
+  
 }

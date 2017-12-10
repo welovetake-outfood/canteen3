@@ -14,9 +14,9 @@ public class DbPool {
   {
     try
     {
-      String url1="jdbc:mysql://127.0.0.1:3306/mycanteendb?useSSL=false";
+      String url1="jdbc:mysql://localhost:3306/mycanteendb?useSSL=false";
       String username="root";
-      String password="pooh510cx77ace";
+      String password="0103";
       Class.forName("com.mysql.jdbc.Driver").newInstance();
       conn=DriverManager.getConnection(url1,username,password);
     }
