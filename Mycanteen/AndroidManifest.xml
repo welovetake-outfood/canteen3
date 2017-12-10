@@ -12,11 +12,11 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true" >
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -70,7 +70,6 @@
             android:name=".Menudetail"
             android:label="@string/title_activity_menudetail" >
         </activity>
-        
         <activity android:name=".LoginSuccess" >
         </activity>
         <activity android:name=".WorkerRegister" >
@@ -88,6 +87,10 @@
         <activity android:name=".ExistingMenu" >
         </activity>
         <activity android:name=".NewMenu" >
+        </activity>
+        <activity
+            android:name=".Updatemenu"
+            android:label="@string/title_activity_updatemenu" >
         </activity>
     </application>
 
