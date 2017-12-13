@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,10 +31,9 @@ public class CheckBirthday extends Activity {
     setContentView(R.layout.activity_checkbirthday);
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    //mdatas=getbirthdaymsg(canteen.getId());
     final ListView p = (ListView) findViewById(R.id.listView1);
     final TextView text = (TextView) findViewById(R.id.appointmenttext);
-    p.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
+    p.setAdapter(new ArrayAdapter<String>(this, R.layout.array_adapter,getData()));
     p.setOnItemClickListener(new ListView.OnItemClickListener(){
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -55,7 +57,7 @@ public class CheckBirthday extends Activity {
                         + "预约时间：晚餐";
                 }
             }
-            text.setText("预约详情：\n" + appointmenttext[arg2]);
+            text.setText("预约详情：\n" + appointmenttext[arg2]); 
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -74,10 +76,36 @@ public class CheckBirthday extends Activity {
             try {
                 o=getbirthdayjson(canteen.getId());
                 JSONObject jsonobject=o.getJSONObject(arg2);
-                String name = jsonobject.getString("peoplename"); //获取所需删除数据的名字
-                System.out.println(name);
-                setbirthdaybooknamejson(name);
-                refresh();
+                final String name = jsonobject.getString("peoplename"); //获取所需删除数据的名字
+                Dialog alertDialog = new AlertDialog.Builder(CheckBirthday.this).   
+                        setTitle("确认删除？").   
+                        setMessage("是否完成该条预约并删除信息").   
+                        setIcon(R.drawable.ic_launcher).   
+                        setPositiveButton("删除", new DialogInterface.OnClickListener() {   
+                               
+                            @Override   
+                            public void onClick(DialogInterface dialog, int which) {   
+                                // TODO Auto-generated method stub    
+                                try {
+                                    setbirthdaybooknamejson(name);
+                                    refresh();
+                                } catch (Exception e) {
+                                    // TODO Auto-generated catch block
+                                    e.printStackTrace();
+                                }
+                            }   
+                        }).   
+                        setNegativeButton("取消", new DialogInterface.OnClickListener() {   
+                               
+                            @Override   
+                            public void onClick(DialogInterface dialog, int which) {   
+                                // TODO Auto-generated method stub   
+                                refresh();
+                            }   
+                        }).   
+                        create();   
+                alertDialog.show();   
+
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -89,7 +117,7 @@ public class CheckBirthday extends Activity {
   
   public void refresh() {
       onCreate(null);
-  }
+  } 
   
   private List<String> getData(){
       List<String> data = new ArrayList<String>();

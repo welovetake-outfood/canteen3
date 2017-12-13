@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -28,7 +29,8 @@ public class Birthdaybook extends Activity {
   private int year,month,day;
   private int yearbook=0,monthbook=0,daybook=0;
   TextView showtime,tip;
-  Button button,buttonsignup;
+  ImageButton button;
+  Button buttonsignup;
   RadioGroup rg;
   EditText phone,peoplename;
   private int lunchordinner;
@@ -44,14 +46,14 @@ public class Birthdaybook extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_birthdaybook);
-    TextView canteenname=(TextView) findViewById(R.id.birthdaybooktextview);    
+    //TextView canteenname=(TextView) findViewById(R.id.birthdaybooktextview);    
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    canteenname.setText("生日预定");
+    //canteenname.setText("生日预定");
     getDate();
     tip=(TextView) findViewById(R.id.birthdaybooktextView5);
     showtime=(TextView) findViewById(R.id.birthdaybooktextView1);
-    button=(Button) findViewById(R.id.birthdaybookbutton1);
+    button=(ImageButton) findViewById(R.id.birthdaybookbutton1);
     //peoplenumber=(EditText) findViewById(R.id.birthdaybookeditText1);
     phone=(EditText) findViewById(R.id.birthdaybookeditText2);
     peoplename=(EditText) findViewById(R.id.birthdaybookeditText3);
@@ -90,7 +92,7 @@ public class Birthdaybook extends Activity {
             finish();
             }
             else {
-              tip.setText("提示：提交失败");
+              tip.setText("提交失败");
             }
           }            
       }
@@ -109,7 +111,7 @@ public class Birthdaybook extends Activity {
       }
     }
     catch (Exception e) {
-      tip.setText("提示：服务器异常，请稍后再使");
+      tip.setText("服务器异常，请稍后再试");
       e.printStackTrace();
     }
     return 0;
@@ -133,32 +135,32 @@ public class Birthdaybook extends Activity {
   
   private boolean validate() {
     if (yearbook==0) {
-      tip.setText("提示:请选择日期");
+      tip.setText("请选择日期");
       return false;
     }
     //String pnstring=peoplenumber.getText().toString();
     String phonestring=phone.getText().toString();
     String namestring=peoplename.getText().toString();
     if (phonestring.trim()== null || phonestring.trim().length() == 0) {
-      tip.setText("提示:请输入联系电话");
+      tip.setText("请输入联系电话");
       return false;
     }
     if (namestring.trim()== null || namestring.trim().length() == 0) {
-      tip.setText("提示:请输入姓名");
+      tip.setText("请输入姓名");
       return false;
     }
     if (yearbook<year) {
-      tip.setText("提示:该时间段不可预约");
+      tip.setText("该时间段不可预约");
       return false;
     }
     else if (yearbook==year) {
       if (monthbook<month) {
-        tip.setText("提示:该时间段不可预约");
+        tip.setText("该时间段不可预约");
         return false;
       }
       else if (monthbook==month) {
         if (daybook<=day) {
-          tip.setText("提示:该时间段不可预约");
+          tip.setText("该时间段不可预约");
           return false;
         }
       }

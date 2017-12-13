@@ -14,11 +14,14 @@ public class DbPool {
   {
     try
     {
-      String url1="jdbc:mysql://127.0.0.1:3306/mycanteendb?useSSL=false";
-      String username="root";
-      String password="pooh510cx77ace";
+      String url1="jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_canteenhit?useSSL=false";
+      //String url1="jdbc:mysql://localhost:3306/mycanteendb?useSSL=false";
+      String username="z00nwj35o4";
+      //String password="pooh510cx77ace";
+      String password="3m5jk3h4hh4l0k4zmyhxllzm30ykyl22ymjz415k";
       Class.forName("com.mysql.jdbc.Driver").newInstance();
       conn=DriverManager.getConnection(url1,username,password);
+
     }
     catch (Exception e)
     {

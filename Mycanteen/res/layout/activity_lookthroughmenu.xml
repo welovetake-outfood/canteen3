@@ -2,13 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#FFF3EFE3" 
     android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="8dp"
+        android:textColor="#FF919191" 
+        android:text="点击图片查看详情" />
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:background="#F0FFFFFF"
+        android:layout_height="300dp"
+         >
 
         <ImageView
             android:id="@+id/id_content"
@@ -17,21 +27,29 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/lizi" />
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="8dp"
+        android:textColor="#FF919191" 
+        android:text="向左滑动" />
 
     <com.example1.mycanteen.MyHorizontalScrollView
         android:id="@+id/id_horizontalScrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:background="@android:color/white"
         android:scrollbars="none" >
 
         <LinearLayout
             android:id="@+id/id_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal" >
         </LinearLayout>

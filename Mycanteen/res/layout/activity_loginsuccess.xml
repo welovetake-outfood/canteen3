@@ -2,89 +2,210 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/b4"
+    android:background="#FFF3EFE3"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/LoginSuccesstextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="      登陆成功！"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TableRow
-        android:id="@+id/tableRow1"
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="298dp"
-        android:layout_below="@+id/LoginSuccesstextview"
-        android:layout_gravity="bottom"
-        android:layout_marginRight="16dp"
-        android:layout_toLeftOf="@+id/WorkerFuntion3"
-        android:layout_weight="0.56" >
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="功能选择"
+        android:textColor="#FFDEB887" />
 
-        <ImageButton
-            android:id="@+id/WorkerFuntion1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="26dp"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:src="@drawable/button71"
-            android:text="添加食谱" />
-
-        <ImageButton
-            android:id="@+id/WorkerFuntion2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="26dp"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:src="@drawable/button81"
-            android:text="发布公告" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_weight="0.25" >
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/WorkerFuntion4"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginTop="26dp"
             android:layout_weight="1"
-            android:background="#00000000"
-            android:src="@drawable/button611"
-            android:text="查看包厢预约" />
+            android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/WorkerFuntion3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginTop="26dp"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:src="@drawable/button511"
-            android:text="查看生日餐预约" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
 
-        <ImageButton
-            android:id="@+id/WorkerFuntion5"
-            android:layout_width="0dp"
+                <ImageButton
+                    android:id="@+id/WorkerFuntion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/buttongonggao"
+                    android:text="发布公告" />
+
+                <ImageButton
+                    android:id="@+id/WorkerFuntion1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/buttontianjia"
+                    android:text="添加食谱" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="发布公告"
+                    android:textColor="#FFDEB887" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="添加食谱"
+                    android:textColor="#FFDEB887" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginTop="26dp"
             android:layout_weight="1"
-            android:background="#00000000"
-            android:src="@drawable/button91"
-            android:text="查看建议与反馈" />
-    </TableRow>
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/WorkerFuntion4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/buttonbaoxiang"
+                    android:text="查看包厢预约" />
+
+                <ImageButton
+                    android:id="@+id/WorkerFuntion3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/buttonshengri"
+                    android:text="查看生日餐预约" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="查看包厢预约"
+                    android:textColor="#FFDEB887" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="查看生日预约"
+                    android:textColor="#FFDEB887" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/WorkerFuntion5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/buttonliuyan"
+                    android:text="查看建议与反馈" />
+
+                <ImageButton
+                    android:id="@+id/imageButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/buttonmore" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="建议反馈"
+                    android:textColor="#FFDEB887" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="敬请期待"
+                    android:textColor="#FFDEB887" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

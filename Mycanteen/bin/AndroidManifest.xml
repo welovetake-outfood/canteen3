@@ -12,14 +12,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme"
+        android:icon="@drawable/iocnlogo"
+        android:label="美味食堂"
+        android:theme="@style/homeTheme"
         android:hardwareAccelerated="false"
         android:largeHeap="true" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:theme="@style/homeTheme"
+            android:label="美味食堂>" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,66 +29,94 @@
         </activity>
         <activity
             android:name=".Workerlogin"
-            android:label="@string/title_activity_workerlogin" >
+            android:theme="@style/homeTheme"
+            android:label="用户登录>" >
         </activity>
         <activity
             android:name=".Studentchoose"
-            android:label="@string/title_activity_studentchoose" >
+            android:theme="@style/homeTheme"
+            android:label="选择食堂>" >
         </activity>
         <activity
             android:name=".CanteenpageFragment"
-            android:label="@string/title_activity_canteenpage_fragment" >
+            android:label="美味食堂" >
         </activity>
         <activity
             android:name=".CanteenlistFragment"
-            android:label="@string/title_activity_canteenlist_fragment" >
+            android:label="美味食堂" >
         </activity>
         <activity
             android:name=".Bookcanteen"
-            android:label="@string/title_activity_bookcanteen" >
+            android:theme="@style/baoxiangTheme"
+            android:label="预约包厢>" >
         </activity>
         <activity
             android:name=".Leavemessage"
-            android:label="@string/title_activity_leavemessage" >
+            android:theme="@style/tianjiaTheme"
+            android:label="反馈建议>" >
         </activity>
         <activity
             android:name=".Birthdaybook"
-            android:label="@string/title_activity_birthdaybook" >
+            android:theme="@style/dangaoTheme"
+            android:label="预约生日>" >
         </activity>
         <activity
             android:name=".Lookthroughdetail"
-            android:label="@string/title_activity_lookthroughdetail" >
+            android:theme="@style/homeTheme"
+            android:label="食堂介绍>" >
         </activity>
         <activity
             android:name=".Givecomment"
-            android:label="@string/title_activity_givecomment" >
+            android:label="美味食堂" >
         </activity>
         <activity
             android:name=".Lookthroughmenu"
-            android:label="@string/title_activity_lookthroughmenu" >
+            android:theme="@style/caidanTheme"
+            android:label="查看菜单>" >
         </activity>
         <activity
             android:name=".Menudetail"
-            android:label="@string/title_activity_menudetail" >
+            android:theme="@style/daochaTheme"
+            android:label="菜品详情>" >
         </activity>
         
-        <activity android:name=".LoginSuccess" >
+        <activity android:name=".LoginSuccess" 
+            android:theme="@style/homeTheme"
+            android:label="登陆成功>">
         </activity>
-        <activity android:name=".WorkerRegister" >
+        <activity android:name=".WorkerRegister" 
+            android:theme="@style/homeTheme"
+            android:label="用户注册>">
         </activity>
-        <activity android:name=".AddMenu" >
+        <activity android:name=".AddMenu" 
+            android:label="美味食堂">
         </activity>
-        <activity android:name=".ReleaseAnnouncement" >
+        <activity android:name=".ReleaseAnnouncement" 
+            android:theme="@style/gonggaoTheme"
+            android:label="发布公告>">
         </activity>
-        <activity android:name=".ViewMessage" >
+        <activity android:name=".ViewMessage" 
+            android:theme="@style/jianyiTheme"
+            android:label="建议反馈>">
         </activity>
-        <activity android:name=".CheckBirthday" >
+        <activity android:name=".CheckBirthday" 
+            android:theme="@style/dangaoTheme"
+            android:label="查看生日预约>">
         </activity>
-        <activity android:name=".CheckAppointment" >
+        <activity android:name=".CheckAppointment" 
+            android:theme="@style/baoxiangTheme"
+            android:label="查看包厢预约>">
         </activity>
-        <activity android:name=".ExistingMenu" >
+        <activity android:name=".ExistingMenu"
+            android:theme="@style/caidanTheme"
+            android:label="已有菜品>" >
         </activity>
-        <activity android:name=".NewMenu" >
+        <activity android:name=".NewMenu" 
+            android:label="美味食堂">
+        </activity>
+        <activity android:name=".Update"
+            android:theme="@style/tianjiaTheme"
+            android:label="修改菜品>" >
         </activity>
     </application>
 

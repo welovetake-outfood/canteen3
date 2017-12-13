@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -13,7 +13,7 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
@@ -21,7 +21,74 @@
     <!-- 定义星星图片 -->
     <item name="android:progressDrawable">@drawable/rating_bar</item>
     <!-- 根据自定义星星图片的大小,设置相应的值,否则可能显示不全 -->
-    <item name="android:minHeight">80dp</item>
+    <item name="android:minHeight">20dp</item>
 </style>
-
+<style name="tianjiaTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/tianjiaActionBar</item>         
+  
+</style>
+<style name="dangaoTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/dangaoActionBar</item>         
+  
+</style>
+<style name="baoxiangTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/baoxiangActionBar</item>         
+  
+</style>
+<style name="jianyiTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/jianyiActionBar</item>         
+  
+</style>
+<style name="homeTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/homeActionBar</item>         
+  
+</style>
+<style name="gonggaoTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/gonggaoActionBar</item>         
+  
+</style>
+<style name="daochaTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/daochaActionBar</item>         
+  
+</style>
+<style name="caidanTheme" parent="android:Theme.Holo.Light">   
+    <item name="android:actionBarStyle">@style/caidanActionBar</item>         
+  
+</style>
+<style name="tianjiaActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf6</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="dangaoActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf1</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="jianyiActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf4</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="gonggaoActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf8</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="caidanActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf7</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="baoxiangActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf5</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="homeActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf2</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="daochaActionBar" parent="@android:style/Widget.Holo.ActionBar">  
+    <item name="android:background">@drawable/hf3</item>   
+     <item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title.Own</item>     
+</style>
+<style name="TextAppearance.Holo.Widget.ActionBar.Title.Own"
+       parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"> 
+    <item name="android:textColor">#FFFFFF</item> 
+</style>
 </resources>

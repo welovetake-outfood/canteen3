@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/TextView"
+     android:layout_width="match_parent"
+     android:layout_height="30dp"
+     android:textSize="15sp"
+     android:paddingTop="7dp" 
+     android:paddingLeft="20dp" 
+     android:paddingRight="80dp" 
+     android:maxEms="10"
+     android:singleLine="true"  
+     android:background="@drawable/item_single_choice_selector"
+     android:text="建议反馈建议反馈建议反馈建议反馈建议反馈建议反馈建议反馈建议反馈建议反馈建议反馈"/>

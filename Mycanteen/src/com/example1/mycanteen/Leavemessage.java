@@ -31,7 +31,6 @@ public class Leavemessage extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_leavemessage);
-    TextView text=(TextView) findViewById(R.id.leavemessagetextview);
     button = (Button) findViewById(R.id.leavemessagebutton1);
     message = (EditText) findViewById(R.id.leavemessageeditText1);
     tip=(TextView) findViewById(R.id.leavemessagetextView1);
@@ -40,7 +39,6 @@ public class Leavemessage extends Activity {
     tip.setText("Ã· æ£∫");
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    text.setText(canteen.name+" leavemessage");
     button.setOnClickListener(new View.OnClickListener() {   
       @Override
       public void onClick(View v) {
@@ -62,7 +60,7 @@ public class Leavemessage extends Activity {
       }
   });
     
-    listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
+    listview.setAdapter(new ArrayAdapter<String>(this, R.layout.array_adapter,getData()));
     
   }
   

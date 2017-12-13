@@ -30,9 +30,9 @@ public class GetdescServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		Dao pd=new Dao();
-    int canteenid=Integer.parseInt(request.getParameter("canteenid"));
+    String canteenid=request.getParameter("canteenid");
     //String password=request.getParameter("password");
     String canteendesc=pd.getdesc(canteenid);
     response.setContentType("text/html;charset=GBK");

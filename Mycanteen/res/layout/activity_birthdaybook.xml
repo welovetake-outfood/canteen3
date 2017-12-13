@@ -2,138 +2,198 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FFF3EFE3"
     tools:context="com.example1.mycanteen.Birthdaybook" >
 
-    <TextView
-        android:id="@+id/birthdaybooktextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/birthdaybooktextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/birthdaybooktextview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:text=""
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:text="预约信息" />
 
-    <Button
-        android:id="@+id/birthdaybookbutton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/birthdaybooktextView1"
-        android:layout_alignBottom="@+id/birthdaybooktextView1"
-        android:layout_alignParentRight="true"
-        android:text="日历" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#F0FFFFFF" >
 
-    <TextView
-        android:id="@+id/birthdaybooktextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/birthdaybooktextView1"
-        android:layout_alignBottom="@+id/birthdaybooktextView1"
-        android:layout_alignLeft="@+id/birthdaybooktextview"
-        android:text="选择日期："
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/birthdaybooktextView2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="日期：" />
 
-    <TextView
-        android:id="@+id/birthdaybooktextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/birthdaybookGroup"
-        android:text="选择餐次："
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/birthdaybooktextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="8"
+                android:hint="选择日期"
+                android:textSize="15sp" />
 
-    <RadioGroup
-        android:id="@+id/birthdaybookGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/birthdaybooktextView1"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="18dp"
-        android:layout_toRightOf="@+id/birthdaybooktextView3"
-        android:orientation="horizontal" >
+            <ImageButton
+                android:id="@+id/birthdaybookbutton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:src="@drawable/rl"
+                android:layout_marginLeft="20dp"
+                android:text="日历" />
 
-        <RadioButton
-            android:id="@+id/birthdaybookradioButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="中午"
-            android:textSize="20sp" />
+        </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/birthdaybookradioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="晚上"
-            android:textSize="20sp" />
-    </RadioGroup>
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:background="#FFF3EFE3"
+            android:layout_height="2dp" />
 
-    <TextView
-        android:id="@+id/birthdaybooktextView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/birthdaybookGroup"
-        android:layout_marginTop="23dp"
-        android:text="联系电话:"
-        android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#F0FFFFFF" >
 
-    <TextView
-        android:id="@+id/birthdaybooktextView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/birthdaybooktextView6"
-        android:layout_below="@+id/birthdaybooktextView6"
-        android:layout_marginTop="24dp"
-        android:text="姓名:"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/birthdaybooktextView3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="餐次：" />
 
-    <Button
-        android:id="@+id/birthdaybookbutton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/birthdaybookGroup"
-        android:layout_marginBottom="39dp"
-        android:text="提交申请" />
+            <RadioGroup
+                android:id="@+id/birthdaybookGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/birthdaybookeditText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/birthdaybookeditText3"
-        android:layout_toRightOf="@+id/birthdaybooktextView6"
-        android:ems="8"
-        android:inputType="number" />
+                <RadioButton
+                    android:id="@+id/birthdaybookradioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:textSize="15sp"
+                    android:text="午餐" />
 
-    <EditText
-        android:id="@+id/birthdaybookeditText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/birthdaybooktextView7"
-        android:layout_alignBottom="@+id/birthdaybooktextView7"
-        android:layout_centerHorizontal="true"
-        android:ems="8"
-        android:inputType="textPersonName" />
+                <RadioButton
+                    android:id="@+id/birthdaybookradioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="晚餐" />
+            </RadioGroup>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/birthdaybooktextView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/birthdaybookbutton2"
-        android:layout_alignLeft="@+id/birthdaybooktextView7"
-        android:layout_marginBottom="20dp"
-        android:maxLength="45"
-        android:maxLines="1"
-        android:text="fff" />
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:text="联系人" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#F0FFFFFF" >
+
+            <TextView
+                android:id="@+id/birthdaybooktextView6"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="联系电话:" />
+
+            <EditText
+                android:id="@+id/birthdaybookeditText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:ems="8"
+                android:hint="请输入联系人电话"
+                android:inputType="number"
+                android:textSize="15sp" >
+
+                <requestFocus android:layout_height="wrap_content" />
+
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="match_parent"
+            android:background="#FFF3EFE3"
+            android:layout_height="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#F0FFFFFF" >
+
+            <TextView
+                android:id="@+id/birthdaybooktextView7"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="姓名 :" />
+
+            <EditText
+                android:id="@+id/birthdaybookeditText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:hint="请输入联系人姓名"
+                android:textSize="15sp"
+                android:ems="8"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:text="提示"/>
+
+        <TextView
+            android:id="@+id/birthdaybooktextView5"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:maxLength="45"
+            android:maxLines="1"
+            android:layout_marginLeft="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/birthdaybookbutton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#FFDEB887"
+                android:text="提交申请" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -2,116 +2,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgzc"
     tools:context="com.example1.mycanteen.WorkerRegister" >
-    
-    <TextView
-        android:id="@+id/Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/registereditPW"
-        android:layout_alignLeft="@+id/Name"
-        android:text="  密码  ："
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    
-    <EditText
-        android:id="@+id/registereditPW"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/canteenGroup"
-        android:layout_alignLeft="@+id/canteenGroup"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:inputType="textPassword" />
 
-    <TextView
-        android:id="@+id/Name"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/registereditPW"
-        android:layout_marginBottom="14dp"
-        android:layout_toLeftOf="@+id/RegisterWelcome"
-        android:text="用户名："
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/registereditName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Name"
-        android:layout_alignBottom="@+id/Name"
-        android:layout_alignLeft="@+id/registereditPW"
-        android:ems="10" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center" >
 
-        <requestFocus />
-    </EditText>
+            <TextView
+                android:id="@+id/RegisterWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Sign up"
+                android:textColor="#FFDEB887"
+                android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="48dp"
-        android:layout_toRightOf="@+id/RegisterWelcome"
-        android:text="注册" />
+        </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/canteenGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Register"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="27dp" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp" >
 
-        <RadioButton
-            android:id="@+id/RadioXS"
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="用户名：" />
+
+            <EditText
+                android:id="@+id/registereditName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:ems="10"
+                android:focusable="true"
+                android:hint="请输入用户名"
+                android:textSize="15sp"
+                android:inputType="textPersonName"  >
+
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:background="#60C1C1C1"
+            android:layout_height="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/Password"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="密码  ："/>
+
+            <EditText
+                android:id="@+id/registereditPW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:ems="10"
+                android:hint="请输入密码"
+                android:textSize="15sp"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:background="#60C1C1C1"
+            android:layout_height="2dp" />
+
+        <RadioGroup
+            android:id="@+id/canteenGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="    学士餐厅" />
+            android:layout_gravity="center" >
 
-        <RadioButton
-            android:id="@+id/RadioXY"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="    学苑餐厅" />
+            <RadioButton
+                android:id="@+id/RadioXS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="15sp"
+                android:text="    学士餐厅" />
 
-        <RadioButton
-            android:id="@+id/radioHD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="    美食长廊" />
+            <RadioButton
+                android:id="@+id/RadioXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="    学苑餐厅" />
 
-        <RadioButton
-            android:id="@+id/radioQZ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="    回味斋" />
+            <RadioButton
+                android:id="@+id/radioHD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="    美食长廊" />
 
-        <RadioButton
-            android:id="@+id/radioJZ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="    真味饺子园" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/radioQZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="    回味斋" />
 
-    <TextView
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Password"
-        android:layout_below="@+id/canteenGroup"
-        android:textColor="#FF0000"
-        android:text="提示："
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+            <RadioButton
+                android:id="@+id/radioJZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="    真味饺子园" />
+        </RadioGroup>
 
-    <TextView
-        android:id="@+id/RegisterWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/registereditName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="欢迎注册餐厅系统"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:text="提示："/>
+
+        <Button
+            android:id="@+id/Register"
+            android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttoncircle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#FFFFFFFF"
+                android:text="注册" />
+
+    </LinearLayout>
 
 </RelativeLayout>

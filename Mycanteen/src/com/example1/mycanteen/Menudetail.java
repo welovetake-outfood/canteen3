@@ -109,7 +109,7 @@ public class Menudetail extends Activity {
         }
       }
   });
-    listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
+    listview.setAdapter(new ArrayAdapter<String>(this, R.layout.array_adapter,getData()));
   }
   
   private List<String> getData(){

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,8 +32,27 @@ public class ViewMessage extends Activity {
     listview=(ListView) findViewById(R.id.listView1);
     Intent intent=getIntent();
     canteen=(Schoolcanteen.Canteen)intent.getSerializableExtra("canteen");
-    listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,getData()));
-    
+    final TextView text = (TextView) findViewById(R.id.appointmenttext);
+    listview.setAdapter(new ArrayAdapter<String>(this, R.layout.array_adapter,getData()));
+    listview.setOnItemClickListener(new ListView.OnItemClickListener(){
+        @Override
+        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+            // TODO Auto-generated method stub
+            JSONArray o = null;
+            try {
+                o=getcommentjson(canteen.getId());
+                String[] appointmenttext = new String[o.length()];
+                for(int i=0;i<o.length();i++){
+                    JSONObject jsonobject=o.getJSONObject(i);
+                    appointmenttext[i] = jsonobject.getString("message");
+                }
+                text.setText("ÏêÏ¸½¨Òé£º\n" + appointmenttext[arg2]);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        });
   }
   
 private List<String> getData(){ 

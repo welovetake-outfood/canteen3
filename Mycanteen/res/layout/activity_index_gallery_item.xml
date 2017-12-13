@@ -21,7 +21,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:textColor="#ff0000"
         android:textSize="12dp" />
 
 </RelativeLayout>

@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class LoginSuccess extends Activity {
   public Schoolcanteen.Canteen canteen;
@@ -25,7 +22,7 @@ public class LoginSuccess extends Activity {
     buttonup1.setOnClickListener(new View.OnClickListener() {   
         @Override
         public void onClick(View v) {
-            Intent intent=new Intent(LoginSuccess.this,AddMenu.class);
+            Intent intent=new Intent(LoginSuccess.this,ExistingMenu.class);
             intent.putExtras(data);
             startActivity(intent);
         }

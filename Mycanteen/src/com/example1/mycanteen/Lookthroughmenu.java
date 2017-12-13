@@ -95,7 +95,7 @@ public class Lookthroughmenu extends Activity {
                   thread.start();*/
                   mImg.setImageBitmap((Bitmap) mAdapter.map.get(position));
                   viewIndicator.setBackgroundColor(Color  
-                      .parseColor("#AA024DA4"));  
+                      .parseColor("#FFDEB887"));  
                 }  
             });  
     //添加点击回调  
@@ -153,7 +153,7 @@ public class Lookthroughmenu extends Activity {
               startActivity(intent);
             }
           });
-          view.setBackgroundColor(Color.parseColor("#AA024DA4"));  
+          view.setBackgroundColor(Color.parseColor("#FFDEB887"));  
           }  
     }); 
     //设置适配器  
@@ -176,7 +176,7 @@ public class Lookthroughmenu extends Activity {
         a.setDishscore((float)jsonobject.getDouble("dishscore"));
         a.setPicturename(jsonobject.getString("picturename"));
         a.setCommentpeople(jsonobject.getInt("commentpeople"));
-        a.setDishname(jsonobject.getString("dishname"));
+        a.setDishname(jsonobject.getString("dishname"));;
         d.add(a);
       }
       //d= (List<Dish>)JSONArray.toCollection(o, Dish.class); //!!!!!!!!!!!!!!

@@ -16,11 +16,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import android.util.Log;
-
 public class HttpUtil {
   public static HttpClient httpClient=new DefaultHttpClient();
-  public static final String BASE_URL="http://10.0.2.2:8080/Mycanteenserver/";
+  public static final String BASE_URL="http://ccanteen.applinzi.com/";
   //??????????????????????????
   public static String getRequest(final String url) throws Exception{
     FutureTask<String> task=new FutureTask<String>(
